@@ -18,8 +18,6 @@ class ViewController: UIViewController, StratusObserver {
         // Do any additional setup after loading the view, typically from a nib.
         
         fetcher.attachObserver( observer: self )
-        
-        fetcher.test()
     }
 
     override func didReceiveMemoryWarning() {
