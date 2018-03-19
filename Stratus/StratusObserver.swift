@@ -8,5 +8,5 @@
 
 protocol StratusObserver {
     func onUpdate( stratusData: StratusDataFetcher.StratusDataStruct )
-    func onError( error: Error )
+    func onSocketError( error: Error )
 }

@@ -43,7 +43,7 @@
     
     private func notifyError(error: Error) {
         for observer in observerArray {
-            observer.onError(error: error)
+            observer.onSocketError(error: error)
         }
     }
     

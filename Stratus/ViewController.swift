@@ -65,7 +65,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
         verticalSpeed.text = "Vertical Speed: " + String(stratusData.verticalSpeed)
     }
     
-    func onError(error: Error) {
+    func onSocketError(error: Error) {
         switch error {
         case TimeoutError.timeout:
             let alert = UIAlertController( title: "Timeout",
@@ -78,8 +78,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
                 } )
             
             self.present(alert, animated: true, completion: nil)
+            
         default:
-            break
+            let alert = UIAlertController( title: "Error",
+                                           message: "An error has occured: " + error.localizedDescription,
+                                          preferredStyle: UIAlertControllerStyle.alert )
+            
+            alert.addAction( UIAlertAction( title: "Ok", style: UIAlertActionStyle.default ) {
+                (UIAlertAction) -> Void in
+                self.fetcher.refreshSockets()
+            } )
+            
+            self.present(alert, animated: true, completion: nil)
         }
     }
 }
