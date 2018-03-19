@@ -9,7 +9,10 @@
 import Foundation
 
 struct StratusModel {
-    static let ASIPOffset: Int = 3
+    static let StatusPort: UInt16 = 41501
+    static let GPSPort: UInt16 = 41502
+    
+    static let ASIPOffset = 3
     static let StatusPayloadByteRange = 5..<217
     static let GPSPayloadByteRange = 5..<46
     

@@ -20,6 +20,7 @@
 		3F75B735204100F600274573 /* UDPSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F75B734204100F600274573 /* UDPSocket.swift */; };
 		3F75B7372046853600274573 /* StratusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F75B7362046853600274573 /* StratusModel.swift */; };
 		3F8D7DF3203B5877008711DA /* StratusObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8D7DF2203B5877008711DA /* StratusObserver.swift */; };
+		3F94923F2060340A00DB681E /* TimeoutTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F94923E2060340A00DB681E /* TimeoutTimer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		3F75B734204100F600274573 /* UDPSocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDPSocket.swift; sourceTree = "<group>"; };
 		3F75B7362046853600274573 /* StratusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StratusModel.swift; sourceTree = "<group>"; };
 		3F8D7DF2203B5877008711DA /* StratusObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StratusObserver.swift; sourceTree = "<group>"; };
+		3F94923E2060340A00DB681E /* TimeoutTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeoutTimer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 				3F75B7362046853600274573 /* StratusModel.swift */,
 				3F73CA1E202E411B00DB1D20 /* StratusDataFetcher.swift */,
 				3F8D7DF2203B5877008711DA /* StratusObserver.swift */,
+				3F94923E2060340A00DB681E /* TimeoutTimer.swift */,
 				3F73C9F4202CF98E00DB1D20 /* Main.storyboard */,
 				3F73C9F7202CF98E00DB1D20 /* Assets.xcassets */,
 				3F73C9F9202CF98E00DB1D20 /* LaunchScreen.storyboard */,
@@ -292,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F73C9F3202CF98E00DB1D20 /* ViewController.swift in Sources */,
+				3F94923F2060340A00DB681E /* TimeoutTimer.swift in Sources */,
 				3F75B7372046853600274573 /* StratusModel.swift in Sources */,
 				3F75B735204100F600274573 /* UDPSocket.swift in Sources */,
 				3F73C9F1202CF98E00DB1D20 /* AppDelegate.swift in Sources */,

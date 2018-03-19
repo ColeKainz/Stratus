@@ -7,5 +7,6 @@
 //
 
 protocol StratusObserver {
-    func update( stratusData: StratusDataFetcher.StratusDataStruct )
+    func onUpdate( stratusData: StratusDataFetcher.StratusDataStruct )
+    func onError( error: Error )
 }

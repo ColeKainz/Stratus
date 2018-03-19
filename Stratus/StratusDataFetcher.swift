@@ -14,7 +14,7 @@
  class StratusDataFetcher {
     
     //The structure the recieved Stratus data will be stored in.
-    public struct StratusDataStruct {
+    struct StratusDataStruct {
         var battery: UInt16 = 0
         var GPSValid: Bool = false
         var longitude: Int32 = 0
@@ -35,59 +35,70 @@
     private init() {}
     
     // Updates all observers.
-    internal func notify() {
+    private func notifyUpdate() {
         for observer in observerArray {
-            observer.update(stratusData: stratusData)
+            observer.onUpdate( stratusData: stratusData )
         }
     }
     
-    func attachObserver(observer: StratusObserver) {
-        observerArray.append(observer)
+    private func notifyError(error: Error) {
+        for observer in observerArray {
+            observer.onError(error: error)
+        }
     }
     
-    internal func onRecieveStatus(data: Data) {
-        let dataArr = data.withUnsafeBytes {
-            Array(UnsafeBufferPointer<UInt8>(start: $0, count: data.count / MemoryLayout<UInt8>.stride))
-        }
-        
-        switch dataArr[StratusModel.ASIPOffset] {
+    func attachObserver( observer: StratusObserver ) {
+        observerArray.append( observer )
+    }
+    
+    private func onSocketRecieve( data: Data ) {
+        let ASIPClass = data[StratusModel.ASIPOffset]
+        switch ASIPClass {
             case StratusModel.StatusASIPID:
-                let payload = Data(data[StratusModel.StatusPayloadByteRange])
-                stratusData.battery = payload[StratusModel.BatteryByteRange].withUnsafeBytes({ $0.pointee })
+                let payload = Data( data[StratusModel.StatusPayloadByteRange] )
+                stratusData.battery = payload[StratusModel.BatteryByteRange].withUnsafeBytes( { $0.pointee } )
                 
-                notify()
+                notifyUpdate()
             
             case StratusModel.GPSASIPID:
-                let payload = Data(data[StratusModel.GPSPayloadByteRange])
+                let payload = Data( data[StratusModel.GPSPayloadByteRange] )
                 
-                let GPSReciever: UInt8 = payload[StratusModel.GPSReceiverFlagsByteRange].withUnsafeBytes({ $0.pointee })
+                let GPSReciever: UInt8 = payload[StratusModel.GPSReceiverFlagsByteRange].withUnsafeBytes( { $0.pointee } )
                 stratusData.GPSValid = GPSReciever & StratusModel.GPSFixValidBitValue == StratusModel.GPSFixValidBitValue
                 
-                stratusData.longitude = payload[StratusModel.LongitudeByteRange].withUnsafeBytes({ $0.pointee })
-                stratusData.latitude = payload[StratusModel.LatitudeByteRange].withUnsafeBytes({ $0.pointee })
+                stratusData.longitude = payload[StratusModel.LongitudeByteRange].withUnsafeBytes( { $0.pointee } )
+                stratusData.latitude = payload[StratusModel.LatitudeByteRange].withUnsafeBytes( { $0.pointee } )
                 
-                stratusData.groundSpeed = payload[StratusModel.GroudSpeedByteRange].withUnsafeBytes({ $0.pointee })
-                stratusData.altitude = payload[StratusModel.AltitudeMSLByteRange].withUnsafeBytes({ $0.pointee })
-                stratusData.verticalSpeed = payload[StratusModel.VerticalSpeedByteRange].withUnsafeBytes({ $0.pointee })
+                stratusData.groundSpeed = payload[StratusModel.GroudSpeedByteRange].withUnsafeBytes( { $0.pointee } )
+                stratusData.altitude = payload[StratusModel.AltitudeMSLByteRange].withUnsafeBytes( { $0.pointee } )
+                stratusData.verticalSpeed = payload[StratusModel.VerticalSpeedByteRange].withUnsafeBytes( { $0.pointee } )
                 
-                notify()
+                notifyUpdate()
             
             default:
                 break
         }
     }
     
-    internal func parseData<T>(type: T.Type, data: [UInt8], offset: Int) -> T {
-        let dataPtr = UnsafeRawPointer(data) + offset
-        return dataPtr.load(as: type)
+    private func onSocketError( error: Error ) {
+        notifyError( error: error )
     }
     
     // Sets up all sockets or ignores the call if every socket is already setup.
     // If any errors occure while setting up the sockets, pass them up to the UI.
-    func setupSockets() throws {
+    func setupSockets() {
         if statusSocket == nil || gpsSocket == nil {
-            statusSocket = try UDPSocket(port: 41501, callback: onRecieveStatus)
-            gpsSocket = try UDPSocket(port: 41502, callback: onRecieveStatus)
+            statusSocket = UDPSocket( port: StratusModel.StatusPort, dataCallback: onSocketRecieve, errorCallback: onSocketError )
+            gpsSocket = UDPSocket( port: StratusModel.GPSPort, dataCallback: onSocketRecieve, errorCallback: onSocketError )
         }
+    }
+    
+    func refreshSockets() {
+        statusSocket?.refresh()
+        gpsSocket?.refresh()
+    }
+    
+    func isSocketSetup() -> Bool {
+        return statusSocket != nil && gpsSocket != nil
     }
 }
