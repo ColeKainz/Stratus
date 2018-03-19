@@ -43,7 +43,7 @@ class UDPSocket: NSObject, GCDAsyncUdpSocketDelegate {
     
     // Sends recived data through the callback.
     internal func udpSocket( _ sock: GCDAsyncUdpSocket, didReceive data: Data, fromAddress address: Data, withFilterContext filterContext: Any? ) {
-        if (timeoutTimer.isRunning) {
+        if timeoutTimer.isRunning {
             timeoutTimer.start()
         }
         dataCallback( data )

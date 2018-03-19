@@ -94,6 +94,8 @@
     }
     
     func refreshSockets() {
+        setupSockets()
+        
         statusSocket?.refresh()
         gpsSocket?.refresh()
     }
