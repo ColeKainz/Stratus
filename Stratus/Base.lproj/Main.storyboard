@@ -71,6 +71,15 @@
                                 <rect key="frame" x="0.0" y="246" width="375" height="421"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Guu-yn-9o3">
+                                <rect key="frame" x="66" y="12" width="246" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Map"/>
+                                    <segment title="Satellite"/>
+                                    <segment title="Hybrid"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -81,6 +90,7 @@
                         <outlet property="Map" destination="xW4-Tb-7DJ" id="Dge-K8-GRt"/>
                         <outlet property="altitude" destination="YXs-fq-9ym" id="ifH-9J-jfl"/>
                         <outlet property="battery" destination="g28-Gw-im4" id="XIi-Kt-KgQ"/>
+                        <outlet property="controller" destination="Guu-yn-9o3" id="znQ-uB-oWy"/>
                         <outlet property="gpsFixValid" destination="dJs-9T-lPx" id="v6G-Yi-VMe"/>
                         <outlet property="groundSpeed" destination="tFR-n3-9II" id="kef-2f-7S5"/>
                         <outlet property="verticalSpeed" destination="srf-8T-Bdw" id="egk-Ng-ees"/>

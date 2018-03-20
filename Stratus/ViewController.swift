@@ -13,7 +13,9 @@ import CoreLocation
 class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserver {
 
     //Map
-    @IBOutlet weak var map: MKMapView!
+    @IBOutlet weak var mapView: MKMapView!
+    
+    @IBOutlet weak var controller: UISegmentedControl!
     
     @IBOutlet weak var battery: UILabel!
     @IBOutlet weak var gpsFixValid: UILabel!
@@ -34,8 +36,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
         
         let region:MKCoordinateRegion = MKCoordinateRegionMake(myLocation, span)
         
-        map.setRegion(region, animated: true)
-        self.map.showsUserLocation = true
+        mapView.setRegion(region, animated: true)
+        self.mapView.showsUserLocation = true
     }
     
     override func viewDidLoad() {
@@ -53,6 +55,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func segmentedControlAction(sender: UISegmentedControl!){
+        switch (sender.selectedSegmentIndex){
+        case 0:
+            mapView.mapType = MKMapType.standard
+        case 1:
+            mapView.mapType = MKMapType.satellite
+        default:
+            mapView.mapType = MKMapType.hybrid
+        }
     }
     
     func onUpdate( stratusData: StratusDataFetcher.StratusDataStruct ) {
