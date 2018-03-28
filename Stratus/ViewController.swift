@@ -15,7 +15,29 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
     //Map
     @IBOutlet weak var mapView: MKMapView!
     
+    //Normal/Hybrid/Satellite Map Views
+    @IBAction func segmentedControlAction(_ sender: UISegmentedControl) {
+        switch(sender.selectedSegmentIndex) {
+        case 0:
+            mapView.mapType = .standard
+        case 1:
+            mapView.mapType = .satellite
+        default:
+            mapView.mapType = .hybrid
+        }
+    }
+    
+    /*
     @IBOutlet weak var controller: UISegmentedControl!
+    */
+    //Zoom Bar
+    /*
+    @IBOutlet weak var slider: UISlider!
+ */
+    /*
+    @IBOutlet weak var travelRadius: UILabel!
+    @IBOutlet weak var currentLocation: UILabel!
+    */
     
     @IBOutlet weak var battery: UILabel!
     @IBOutlet weak var gpsFixValid: UILabel!
@@ -43,6 +65,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
     override func viewDidLoad() {
         super.viewDidLoad()
         
+       /* sliderChanged(sender: self)
+        */
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.requestWhenInUseAuthorization()
@@ -57,6 +81,19 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
         // Dispose of any resources that can be recreated.
     }
     
+    //The zoom slider
+    /*
+    @IBAction func sliderChanged(sender: AnyObject) {
+        let miles = Double(self.slider.value)
+        
+        travelRadius.text = "\(Int(round(miles))) miles"
+        
+        currentLocation.text = "CurrentLocation: \(latitude), \(longitude))"
+    }
+    */
+    
+    //Switching between Satellite/Hybrid Views
+    /*
     @IBAction func segmentedControlAction(sender: UISegmentedControl!){
         switch (sender.selectedSegmentIndex){
         case 0:
@@ -66,7 +103,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
         default:
             mapView.mapType = MKMapType.hybrid
         }
-    }
+    } */
     
     func onUpdate( stratusData: StratusDataFetcher.StratusDataStruct ) {
         battery.text = "Battery: " + String(stratusData.battery)
