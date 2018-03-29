@@ -27,9 +27,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
         }
     }
     
-    /*
-    @IBOutlet weak var controller: UISegmentedControl!
-    */
+    //Zoom
+  /*  @IBAction func slider(_ sender: AnyObject) {
+        let miles = Double(self.slider.value)
+        
+        travelRadius.text = "\(Int(round(miles))) miles"
+        
+        currentLocation.text = "CurrentLocation: \(latitude), \(longitude))"
+    } */
+    
+
     //Zoom Bar
     /*
     @IBOutlet weak var slider: UISlider!
@@ -65,8 +72,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       /* sliderChanged(sender: self)
-        */
+        //slider(sender: self)
+     //   slider(self)
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.requestWhenInUseAuthorization()
@@ -91,19 +98,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
         currentLocation.text = "CurrentLocation: \(latitude), \(longitude))"
     }
     */
-    
-    //Switching between Satellite/Hybrid Views
-    /*
-    @IBAction func segmentedControlAction(sender: UISegmentedControl!){
-        switch (sender.selectedSegmentIndex){
-        case 0:
-            mapView.mapType = MKMapType.standard
-        case 1:
-            mapView.mapType = MKMapType.satellite
-        default:
-            mapView.mapType = MKMapType.hybrid
-        }
-    } */
     
     func onUpdate( stratusData: StratusDataFetcher.StratusDataStruct ) {
         battery.text = "Battery: " + String(stratusData.battery)
