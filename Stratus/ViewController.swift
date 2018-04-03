@@ -7,25 +7,14 @@
 //
 
 import UIKit
-import MapKit
+import GoogleMaps
 import CoreLocation
 
 class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserver {
 
     //Map
-    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet var mapView: GMSMapView!
     
-    //Normal/Hybrid/Satellite Map Views
-    @IBAction func segmentedControlAction(_ sender: UISegmentedControl) {
-        switch(sender.selectedSegmentIndex) {
-        case 0:
-            mapView.mapType = .standard
-        case 1:
-            mapView.mapType = .satellite
-        default:
-            mapView.mapType = .hybrid
-        }
-    }
     
     //Zoom
   /*  @IBAction func slider(_ sender: AnyObject) {
@@ -57,30 +46,52 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
     let manager = CLLocationManager()
     var fetcher = StratusDataFetcher.instance
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let location = locations[0]
-        
-        let span:MKCoordinateSpan = MKCoordinateSpanMake(0.01, 0.01)
-        let myLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
-        
-        let region:MKCoordinateRegion = MKCoordinateRegionMake(myLocation, span)
-        
-        mapView.setRegion(region, animated: true)
-        self.mapView.showsUserLocation = true
-    }
+//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+//        let location = locations[0]
+//
+//        let span:MKCoordinateSpan = MKCoordinateSpanMake(0.01, 0.01)
+//        let myLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
+//
+//        let region:MKCoordinateRegion = MKCoordinateRegionMake(myLocation, span)
+//
+//        mapView.setRegion(region, animated: true)
+//        self.mapView.showsUserLocation = true
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //slider(sender: self)
      //   slider(self)
+        /*
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.requestWhenInUseAuthorization()
         manager.startUpdatingLocation()
+        */
+        
+//        mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+//
+//        self.view = mapView
+        
         
         fetcher.attachObserver( observer: self )
         fetcher.setupSockets()
+        
+        mapView.isMyLocationEnabled = true
+        mapView.settings.myLocationButton = true
+        
+        let path = Bundle.main.path(forResource: "states", ofType: "kml")
+        let url = URL(fileURLWithPath: path!)
+        let kmlPaser = GMUKMLParser(url: url)
+        kmlPaser.parse()
+        
+        let renderer = GMUGeometryRenderer(
+            map: mapView,
+            geometries: kmlPaser.placemarks,
+            styles: kmlPaser.styles);
+        
+        renderer.render()
     }
 
     override func didReceiveMemoryWarning() {
@@ -102,11 +113,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
     func onUpdate( stratusData: StratusDataFetcher.StratusDataStruct ) {
         battery.text = "Battery: " + String(stratusData.battery)
         gpsFixValid.text = "GPS Fix/Valid: " + String(stratusData.GPSValid)
-        longitude.text = "Long: " + String(stratusData.longitude)
-        latitude.text = "Lat: " + String(stratusData.latitude)
+        longitude.text = "Long: " + String(StratusModel.convertToCoords(coord: stratusData.latitude))
+        latitude.text = "Lat: " + String(StratusModel.convertToCoords(coord: stratusData.longitude))
         groundSpeed.text = "Ground Speed: " + String(stratusData.groundSpeed)
         altitude.text = "Altitude: " + String(stratusData.altitude)
         verticalSpeed.text = "Vertical Speed: " + String(stratusData.verticalSpeed)
+        
+        let position = CLLocationCoordinate2DMake(
+            StratusModel.convertToCoords(coord: stratusData.latitude),
+            StratusModel.convertToCoords(coord: stratusData.longitude) )
+        
+        let camera = GMSCameraPosition.camera(
+            withTarget: position,
+            zoom: 5.5 )
+        mapView.camera = camera
     }
     
     func onSocketError(error: Error) {

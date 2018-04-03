@@ -29,4 +29,8 @@ struct StratusModel {
     static let VerticalSpeedByteRange = 30..<32
     
     static let GPSFixValidBitValue: UInt8 = 0b00010000
+    
+    static func convertToCoords( coord: Int32 ) -> Double {
+            return Double(coord)/pow(10, 7)
+    }
 }
