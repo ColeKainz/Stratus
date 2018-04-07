@@ -14,25 +14,21 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
 
     //Map
     @IBOutlet var mapView: GMSMapView!
-    
-    //Zoom
-  /*  @IBAction func slider(_ sender: AnyObject) {
-        let miles = Double(self.slider.value)
-        
-        travelRadius.text = "\(Int(round(miles))) miles"
-        
-        currentLocation.text = "CurrentLocation: \(latitude), \(longitude))"
-    } */
-    
 
-    //Zoom Bar
-    /*
-    @IBOutlet weak var slider: UISlider!
- */
-    /*
-    @IBOutlet weak var travelRadius: UILabel!
-    @IBOutlet weak var currentLocation: UILabel!
-    */
+    //Zoom Buttons (+ and -)
+    //Setting zoom as global variable will allow methods in class to manipulate zoom value
+    var zoom = 5.5
+    
+    @IBAction func zoomIn(_ sender: Any) {
+        zoom = zoom+1
+        self.mapView.animate(toZoom: Float(zoom))
+    }
+    
+    @IBAction func zoomOut(_ sender: Any) {
+        zoom = zoom-1
+        self.mapView.animate(toZoom: Float(zoom))
+    }
+    
     
     @IBOutlet weak var battery: UILabel!
     @IBOutlet weak var gpsFixValid: UILabel!
@@ -44,9 +40,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
 
     let manager = CLLocationManager()
     var fetcher = StratusDataFetcher.instance
+    
+    
+    
     //let polyline = GMSPolyline(path: path)
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,11 +68,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
         mapView.isMyLocationEnabled = true
         mapView.settings.myLocationButton = true
         
+        
+        //Adding a KML map
         let path = Bundle.main.path(forResource: "states", ofType: "kml")
         let url = URL(fileURLWithPath: path!)
         let kmlPaser = GMUKMLParser(url: url)
         kmlPaser.parse()
         
+        //Rendering the KML Map
         let renderer = GMUGeometryRenderer(
             map: mapView,
             geometries: kmlPaser.placemarks,
@@ -113,9 +113,25 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
             StratusModel.convertToCoords(coord: stratusData.latitude),
             StratusModel.convertToCoords(coord: stratusData.longitude) )
         
+        
+        //Adds Polyline that follows the user's position, updated with new position coordinates
+        let linePath = GMSMutablePath()
+        linePath.add(position)
+        let polylinePath = GMSPolyline(path: linePath)
+        polylinePath.map = mapView
+        
+        /*
+         let position = CLLocationCoordinate2DMake(
+         StratusModel.convertToCoords(coord: stratusData.latitude),
+         StratusModel.convertToCoords(coord: stratusData.longitude) )
+         */
+        //path.add(coord: CLLocation)
+        
+        
         let camera = GMSCameraPosition.camera(
             withTarget: position,
-            zoom: 5.5 )
+            //zoom: 5.5 )
+            zoom: Float(zoom) )
         mapView.camera = camera
     }
     
