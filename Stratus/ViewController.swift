@@ -29,6 +29,21 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
         self.mapView.animate(toZoom: Float(zoom))
     }
     
+    @IBAction func zoomSlider(_ sender: UISlider) {
+        let sliderValue = sender.value;
+        zoom = Double(sliderValue)
+        //zoom = sender.value
+        self.mapView.animate(toZoom: Float(zoom))
+    }
+    
+    /*
+    @IBAction func zoomSlider(_ sender: UISlider) {
+        let sliderValue = sender.value;
+        zoom = Double(sliderValue)
+        //zoom = sender.value
+        self.mapView.animate(toZoom: Float(zoom))
+    } */
+    //toZoom = MySlider.Value * Bias
     
     @IBOutlet weak var battery: UILabel!
     @IBOutlet weak var gpsFixValid: UILabel!
@@ -89,17 +104,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
         // Dispose of any resources that can be recreated.
     }
     
-    //The zoom slider
-    /*
-    @IBAction func sliderChanged(sender: AnyObject) {
-        let miles = Double(self.slider.value)
-        
-        travelRadius.text = "\(Int(round(miles))) miles"
-        
-        currentLocation.text = "CurrentLocation: \(latitude), \(longitude))"
-    }
-    */
-    
     func onUpdate( stratusData: StratusDataFetcher.StratusDataStruct ) {
         battery.text = "Battery: " + String(stratusData.battery)
         gpsFixValid.text = "GPS Fix/Valid: " + String(stratusData.GPSValid)
@@ -113,20 +117,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
             StratusModel.convertToCoords(coord: stratusData.latitude),
             StratusModel.convertToCoords(coord: stratusData.longitude) )
         
-        
         //Adds Polyline that follows the user's position, updated with new position coordinates
         let linePath = GMSMutablePath()
         linePath.add(position)
         let polylinePath = GMSPolyline(path: linePath)
         polylinePath.map = mapView
-        
-        /*
-         let position = CLLocationCoordinate2DMake(
-         StratusModel.convertToCoords(coord: stratusData.latitude),
-         StratusModel.convertToCoords(coord: stratusData.longitude) )
-         */
-        //path.add(coord: CLLocation)
-        
         
         let camera = GMSCameraPosition.camera(
             withTarget: position,
