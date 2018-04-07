@@ -15,7 +15,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
     //Map
     @IBOutlet var mapView: GMSMapView!
     
-    
     //Zoom
   /*  @IBAction func slider(_ sender: AnyObject) {
         let miles = Double(self.slider.value)
@@ -45,18 +44,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
 
     let manager = CLLocationManager()
     var fetcher = StratusDataFetcher.instance
+    //let polyline = GMSPolyline(path: path)
     
-//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//        let location = locations[0]
-//
-//        let span:MKCoordinateSpan = MKCoordinateSpanMake(0.01, 0.01)
-//        let myLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
-//
-//        let region:MKCoordinateRegion = MKCoordinateRegionMake(myLocation, span)
-//
-//        mapView.setRegion(region, animated: true)
-//        self.mapView.showsUserLocation = true
-//    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
