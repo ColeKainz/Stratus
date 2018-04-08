@@ -46,6 +46,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
     //toZoom = MySlider.Value * Bias
     
     @IBOutlet weak var battery: UILabel!
+    @IBOutlet weak var transmitPower: UILabel!
     @IBOutlet weak var gpsFixValid: UILabel!
     @IBOutlet weak var longitude: UILabel!
     @IBOutlet weak var latitude: UILabel!
@@ -106,12 +107,30 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
     
     func onUpdate( stratusData: StratusDataFetcher.StratusDataStruct ) {
         battery.text = "Battery: " + String(stratusData.battery)
+        transmitPower.text = "Signal: " + String(stratusData.transmitPower)
+        
         gpsFixValid.text = "GPS Fix/Valid: " + String(stratusData.GPSValid)
-        longitude.text = "Long: " + String(StratusModel.convertToCoords(coord: stratusData.latitude))
-        latitude.text = "Lat: " + String(StratusModel.convertToCoords(coord: stratusData.longitude))
-        groundSpeed.text = "Ground Speed: " + String(stratusData.groundSpeed)
-        altitude.text = "Altitude: " + String(stratusData.altitude)
-        verticalSpeed.text = "Vertical Speed: " + String(stratusData.verticalSpeed)
+        
+        longitude.text = "Long: " + String(
+            StratusModel.convertToCoords( coord: stratusData.latitude )
+        )
+        latitude.text = "Lat: " + String(
+            StratusModel.convertToCoords( coord: stratusData.longitude )
+        )
+        
+        groundSpeed.text = "Ground Speed: " + String(
+            StratusModel.convertSpeed( rawSpeed: Int16(stratusData.groundSpeed),
+                measure: pow(10, 3), time: "H" )
+        ) + " KM/H"
+        
+        verticalSpeed.text = "Vertical Speed: " + String(
+            StratusModel.convertSpeed( rawSpeed: stratusData.verticalSpeed,
+                measure: pow(10, 3), time: "H" )
+        ) + " KM/H"
+        
+        altitude.text = "Altitude: " + String(
+            StratusModel.convertAltitude( rawAltitude: stratusData.altitude, measure: 1 )
+        ) + " m"
         
         let position = CLLocationCoordinate2DMake(
             StratusModel.convertToCoords(coord: stratusData.latitude),

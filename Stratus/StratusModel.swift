@@ -27,10 +27,28 @@ struct StratusModel {
     static let GroudSpeedByteRange = 26..<28
     static let AltitudeMSLByteRange = 22..<26
     static let VerticalSpeedByteRange = 30..<32
+    static let TransmitPowerByteRange = 71..<72
     
     static let GPSFixValidBitValue: UInt8 = 0b00010000
     
     static func convertToCoords( coord: Int32 ) -> Double {
-            return Double(coord)/pow(10, 7)
+        return Double(coord)/pow(10, 7)
+    }
+    
+    static func convertAltitude( rawAltitude: Int32, measure: Double ) -> Double {
+        // Altitude is measured in millimeters by default. This converts it to meters, then to the desired measurement.
+        return Double(rawAltitude)*pow(10,-3)/measure
+    }
+    
+    static func convertSpeed( rawSpeed: Int16, measure: Double, time: String ) -> Double {
+        // Speed is measured in centimeters per second by default. This converts it to meters, then to the desired measurement.
+        switch time {
+        case "s":
+            return Double(rawSpeed)*pow(10,-2)/measure
+        case "m":
+            return Double(rawSpeed)*pow(10,-2)/(measure*60)
+        default:
+            return Double(rawSpeed)*pow(10,-2)/(measure*60*60)
+        }
     }
 }

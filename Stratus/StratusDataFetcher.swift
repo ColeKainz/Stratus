@@ -16,6 +16,7 @@
     //The structure the recieved Stratus data will be stored in.
     struct StratusDataStruct {
         var battery: UInt16 = 0
+        var transmitPower: UInt8 = 0;
         var GPSValid: Bool = false
         var longitude: Int32 = 0
         var latitude: Int32 = 0
@@ -57,6 +58,7 @@
             case StratusModel.StatusASIPID:
                 let payload = Data( data[StratusModel.StatusPayloadByteRange] )
                 stratusData.battery = payload[StratusModel.BatteryByteRange].withUnsafeBytes( { $0.pointee } )
+                stratusData.transmitPower = payload[StratusModel.TransmitPowerByteRange].withUnsafeBytes( { $0.pointee } )
                 
                 notifyUpdate()
             
