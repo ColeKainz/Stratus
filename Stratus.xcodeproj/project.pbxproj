@@ -40,6 +40,7 @@
 		3F6265B920733D08001B8AC5 /* GMUPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F6265AC20733D07001B8AC5 /* GMUPoint.m */; };
 		3F6265BA20733D08001B8AC5 /* GMUPolygon.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F6265AE20733D07001B8AC5 /* GMUPolygon.m */; };
 		3F6265BB20733D08001B8AC5 /* GMUStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F6265B020733D07001B8AC5 /* GMUStyle.m */; };
+		3F6265C0207D5712001B8AC5 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6265BF207D5712001B8AC5 /* MapController.swift */; };
 		3F73C9F1202CF98E00DB1D20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F73C9F0202CF98E00DB1D20 /* AppDelegate.swift */; };
 		3F73C9F3202CF98E00DB1D20 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F73C9F2202CF98E00DB1D20 /* ViewController.swift */; };
 		3F73C9F6202CF98E00DB1D20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F73C9F4202CF98E00DB1D20 /* Main.storyboard */; };
@@ -132,8 +133,8 @@
 		3F6265AE20733D07001B8AC5 /* GMUPolygon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMUPolygon.m; sourceTree = "<group>"; };
 		3F6265AF20733D07001B8AC5 /* GMUStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMUStyle.h; sourceTree = "<group>"; };
 		3F6265B020733D07001B8AC5 /* GMUStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMUStyle.m; sourceTree = "<group>"; };
-		3F6265BD20734538001B8AC5 /* GMUKMLParser.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GMUKMLParser.pch; path = ../GMUKMLParser.pch; sourceTree = "<group>"; };
 		3F6265BE207349EA001B8AC5 /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
+		3F6265BF207D5712001B8AC5 /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		3F73C9ED202CF98E00DB1D20 /* Stratus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stratus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F73C9F0202CF98E00DB1D20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F73C9F2202CF98E00DB1D20 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -297,12 +298,12 @@
 				3F626594207338B8001B8AC5 /* states.kml */,
 				3F73C9F0202CF98E00DB1D20 /* AppDelegate.swift */,
 				3F73C9F2202CF98E00DB1D20 /* ViewController.swift */,
+				3F6265BF207D5712001B8AC5 /* MapController.swift */,
 				3F75B734204100F600274573 /* UDPSocket.swift */,
 				3F75B7362046853600274573 /* StratusModel.swift */,
 				3F73CA1E202E411B00DB1D20 /* StratusDataFetcher.swift */,
 				3F8D7DF2203B5877008711DA /* StratusObserver.swift */,
 				3F94923E2060340A00DB681E /* TimeoutTimer.swift */,
-				3F6265BD20734538001B8AC5 /* GMUKMLParser.pch */,
 				3F73C9F4202CF98E00DB1D20 /* Main.storyboard */,
 				3F73C9F7202CF98E00DB1D20 /* Assets.xcassets */,
 				3F73C9F9202CF98E00DB1D20 /* LaunchScreen.storyboard */,
@@ -482,6 +483,7 @@
 				3F6265B220733D08001B8AC5 /* GMUGeometryRenderer.m in Sources */,
 				3F6265B320733D08001B8AC5 /* GMUKMLParser.m in Sources */,
 				3F6265B520733D08001B8AC5 /* GMUGeometryCollection.m in Sources */,
+				3F6265C0207D5712001B8AC5 /* MapController.swift in Sources */,
 				3F6265BA20733D08001B8AC5 /* GMUPolygon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

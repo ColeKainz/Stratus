@@ -23,6 +23,7 @@
         var groundSpeed: UInt16 = 0
         var altitude: Int32 = 0
         var verticalSpeed: Int16 = 0
+        var groundTrack: UInt16 = 0
     }
     
     static let instance = StratusDataFetcher() // The shared instance of this class.
@@ -71,7 +72,8 @@
                 stratusData.longitude = payload[StratusModel.LongitudeByteRange].withUnsafeBytes( { $0.pointee } )
                 stratusData.latitude = payload[StratusModel.LatitudeByteRange].withUnsafeBytes( { $0.pointee } )
                 
-                stratusData.groundSpeed = payload[StratusModel.GroudSpeedByteRange].withUnsafeBytes( { $0.pointee } )
+                stratusData.groundSpeed = payload[StratusModel.GroundSpeedByteRange].withUnsafeBytes( { $0.pointee } )
+                stratusData.groundTrack = payload[StratusModel.GroundTrackByteRange].withUnsafeBytes( { $0.pointee } )
                 stratusData.altitude = payload[StratusModel.AltitudeMSLByteRange].withUnsafeBytes( { $0.pointee } )
                 stratusData.verticalSpeed = payload[StratusModel.VerticalSpeedByteRange].withUnsafeBytes( { $0.pointee } )
                 

@@ -8,78 +8,48 @@
 
 import UIKit
 import GoogleMaps
-import CoreLocation
 
 class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserver {
 
     //Map
     @IBOutlet var mapView: GMSMapView!
-
+    var mapController: MapController!
+    
     //Zoom Buttons (+ and -)
     //Setting zoom as global variable will allow methods in class to manipulate zoom value
-    var zoom = 5.5
     
-    @IBAction func zoomIn(_ sender: Any) {
-        zoom = zoom+1
-        self.mapView.animate(toZoom: Float(zoom))
+    @IBAction func zoomIn( _ sender: Any ) {
+        self.mapController.zoomIn();
     }
     
-    @IBAction func zoomOut(_ sender: Any) {
-        zoom = zoom-1
-        self.mapView.animate(toZoom: Float(zoom))
+    @IBAction func zoomOut( _ sender: Any ) {
+        self.mapController.zoomOut();
     }
     
-    @IBAction func zoomSlider(_ sender: UISlider) {
-        let sliderValue = sender.value;
-        zoom = Double(sliderValue)
-        //zoom = sender.value
-        self.mapView.animate(toZoom: Float(zoom))
+    @IBAction func zoomSlider( _ sender: UISlider ) {
+        self.mapController.setZoom( zoom: sender.value )
     }
     
-    /*
-    @IBAction func zoomSlider(_ sender: UISlider) {
-        let sliderValue = sender.value;
-        zoom = Double(sliderValue)
-        //zoom = sender.value
-        self.mapView.animate(toZoom: Float(zoom))
-    } */
-    //toZoom = MySlider.Value * Bias
+    @IBOutlet weak var batteryLabel: UILabel!
+    @IBOutlet weak var transmitPowerLabel: UILabel!
+    @IBOutlet weak var gpsFixValidLabel: UILabel!
+    @IBOutlet weak var longitudeLabel: UILabel!
+    @IBOutlet weak var latitudeLabel: UILabel!
+    @IBOutlet weak var groundSpeedLabel: UILabel!
+    @IBOutlet weak var altitudeLabel: UILabel!
+    @IBOutlet weak var verticalSpeedLabel: UILabel!
+    @IBOutlet weak var groundTrackLabel: UILabel!
     
-    @IBOutlet weak var battery: UILabel!
-    @IBOutlet weak var transmitPower: UILabel!
-    @IBOutlet weak var gpsFixValid: UILabel!
-    @IBOutlet weak var longitude: UILabel!
-    @IBOutlet weak var latitude: UILabel!
-    @IBOutlet weak var groundSpeed: UILabel!
-    @IBOutlet weak var altitude: UILabel!
-    @IBOutlet weak var verticalSpeed: UILabel!
-
     let manager = CLLocationManager()
     var fetcher = StratusDataFetcher.instance
-    
-    
-    
-    //let polyline = GMSPolyline(path: path)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //slider(sender: self)
-     //   slider(self)
-        /*
-        manager.delegate = self
-        manager.desiredAccuracy = kCLLocationAccuracyBest
-        manager.requestWhenInUseAuthorization()
-        manager.startUpdatingLocation()
-        */
-        
-//        mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-//
-//        self.view = mapView
-        
-        
         fetcher.attachObserver( observer: self )
         fetcher.setupSockets()
+        
+        mapController = MapController( map: mapView, zoom: 5.5, zoomIncrement: 1 )
         
         mapView.isMyLocationEnabled = true
         mapView.settings.myLocationButton = true
@@ -106,47 +76,38 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
     }
     
     func onUpdate( stratusData: StratusDataFetcher.StratusDataStruct ) {
-        battery.text = "Battery: " + String(stratusData.battery)
-        transmitPower.text = "Signal: " + String(stratusData.transmitPower)
+        let longitude = StratusModel.convertToCoords( coord: stratusData.longitude )
+        let latitude = StratusModel.convertToCoords( coord: stratusData.latitude )
+        let bearing = StratusModel.convertGroundTrack( rawBearing: stratusData.groundTrack )
         
-        gpsFixValid.text = "GPS Fix/Valid: " + String(stratusData.GPSValid)
+        mapController.updateLongAndLat( longitude: longitude, latitude: latitude )
+        mapController.updateBearing( bearing: bearing )
+        mapController.setAndUpdateFlightPath()
+        mapController.updateCameraPosition()
         
-        longitude.text = "Long: " + String(
-            StratusModel.convertToCoords( coord: stratusData.latitude )
-        )
-        latitude.text = "Lat: " + String(
-            StratusModel.convertToCoords( coord: stratusData.longitude )
-        )
+        batteryLabel.text = "Battery: " + String( stratusData.battery)
+        transmitPowerLabel.text = "Signal: " + String( stratusData.transmitPower )
         
-        groundSpeed.text = "Ground Speed: " + String(
-            StratusModel.convertSpeed( rawSpeed: Int16(stratusData.groundSpeed),
-                measure: pow(10, 3), time: "H" )
+        gpsFixValidLabel.text = "GPS Fix/Valid: " + String( stratusData.GPSValid )
+        
+        longitudeLabel.text = "Long: " + String( format: "%.5f", longitude )
+        latitudeLabel.text = "Lat: " + String( format: "%.5f", latitude )
+        
+        groundSpeedLabel.text = "Ground Speed: " + String( format: "%.5f",
+            StratusModel.convertSpeed( rawSpeed: Int16( stratusData.groundSpeed ),
+                measure: pow( 10, 3 ), time: "H" )
         ) + " KM/H"
         
-        verticalSpeed.text = "Vertical Speed: " + String(
+        verticalSpeedLabel.text = "Vertical Speed: " + String( format: "%.5f",
             StratusModel.convertSpeed( rawSpeed: stratusData.verticalSpeed,
-                measure: pow(10, 3), time: "H" )
+                measure: pow( 10, 3 ), time: "H" )
         ) + " KM/H"
         
-        altitude.text = "Altitude: " + String(
+        altitudeLabel.text = "Altitude: " + String( format: "%.5f",
             StratusModel.convertAltitude( rawAltitude: stratusData.altitude, measure: 1 )
         ) + " m"
         
-        let position = CLLocationCoordinate2DMake(
-            StratusModel.convertToCoords(coord: stratusData.latitude),
-            StratusModel.convertToCoords(coord: stratusData.longitude) )
-        
-        //Adds Polyline that follows the user's position, updated with new position coordinates
-        let linePath = GMSMutablePath()
-        linePath.add(position)
-        let polylinePath = GMSPolyline(path: linePath)
-        polylinePath.map = mapView
-        
-        let camera = GMSCameraPosition.camera(
-            withTarget: position,
-            //zoom: 5.5 )
-            zoom: Float(zoom) )
-        mapView.camera = camera
+        groundTrackLabel.text = "Ori: " + String( bearing ) + "°"
     }
     
     func onSocketError(error: Error) {

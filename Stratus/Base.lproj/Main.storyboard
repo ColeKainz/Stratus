@@ -106,6 +106,12 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zyo-hK-WaB">
+                                <rect key="frame" x="906" y="443" width="53" height="25"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.095386675211146965" blue="0.15972374863129557" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -136,6 +142,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Nj8-lm-1hQ" secondAttribute="trailing" constant="150" id="f8x-RN-TlW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="E1t-PE-buf" secondAttribute="trailing" constant="156" id="fxd-Ty-JN1"/>
                             <constraint firstItem="g28-Gw-im4" firstAttribute="top" secondItem="7gm-he-xCv" secondAttribute="bottom" constant="8" symbolic="YES" id="g2V-ZX-8w8"/>
+                            <constraint firstItem="zyo-hK-WaB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="trailing" constant="-209" id="g6X-BK-qm0"/>
                             <constraint firstItem="x80-d6-Ebv" firstAttribute="leading" secondItem="T6q-oc-Jah" secondAttribute="leading" id="gc7-AV-H5L"/>
                             <constraint firstItem="jIh-l9-6fS" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="gvV-kU-NHr"/>
                             <constraint firstItem="x80-d6-Ebv" firstAttribute="trailing" secondItem="T6q-oc-Jah" secondAttribute="trailing" id="n1b-bk-tX8"/>
@@ -151,15 +158,16 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="Latitude" destination="SQh-jZ-2GW" id="Urj-Fc-Kep"/>
-                        <outlet property="Longitude" destination="E1t-PE-buf" id="zAY-X6-d4P"/>
-                        <outlet property="altitude" destination="YXs-fq-9ym" id="ifH-9J-jfl"/>
-                        <outlet property="battery" destination="g28-Gw-im4" id="XIi-Kt-KgQ"/>
-                        <outlet property="gpsFixValid" destination="dJs-9T-lPx" id="v6G-Yi-VMe"/>
-                        <outlet property="groundSpeed" destination="tFR-n3-9II" id="kef-2f-7S5"/>
+                        <outlet property="altitudeLabel" destination="YXs-fq-9ym" id="ifH-9J-jfl"/>
+                        <outlet property="batteryLabel" destination="g28-Gw-im4" id="XIi-Kt-KgQ"/>
+                        <outlet property="gpsFixValidLabel" destination="dJs-9T-lPx" id="v6G-Yi-VMe"/>
+                        <outlet property="groundSpeedLabel" destination="tFR-n3-9II" id="kef-2f-7S5"/>
+                        <outlet property="groundTrackLabel" destination="zyo-hK-WaB" id="71Z-rF-AFC"/>
+                        <outlet property="latitudeLabel" destination="SQh-jZ-2GW" id="qoc-Mv-QvH"/>
+                        <outlet property="longitudeLabel" destination="E1t-PE-buf" id="2Gi-A8-cLu"/>
                         <outlet property="mapView" destination="jIh-l9-6fS" id="zYp-BT-iPW"/>
-                        <outlet property="transmitPower" destination="Nj8-lm-1hQ" id="EaK-Az-Tqa"/>
-                        <outlet property="verticalSpeed" destination="srf-8T-Bdw" id="egk-Ng-ees"/>
+                        <outlet property="transmitPowerLabel" destination="Nj8-lm-1hQ" id="EaK-Az-Tqa"/>
+                        <outlet property="verticalSpeedLabel" destination="srf-8T-Bdw" id="egk-Ng-ees"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
