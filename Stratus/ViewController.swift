@@ -13,6 +13,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
 
     //Map
     @IBOutlet var mapView: GMSMapView!
+    var planeView: UIImageView?
     var mapController: MapController!
     
     //Zoom Buttons (+ and -)
@@ -60,8 +61,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
         
         mapController = MapController( map: mapView, zoom: 5.5, zoomIncrement: 1 )
         
+        //Show user location
         mapView.isMyLocationEnabled = true
         mapView.settings.myLocationButton = true
+        
+        
+        //Adding a marker]
+        /*
+        let plane = UIImage(named: "plane.png")
+        planeView = UIImageView(image: plane)
+        */
+    
         
         
         //Adding a KML map
@@ -75,7 +85,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
             map: mapView,
             geometries: kmlPaser.placemarks,
             styles: kmlPaser.styles);
-        
+        mapView.isMyLocationEnabled = true //for testing
         renderer.render()
     }
 

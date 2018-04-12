@@ -20,6 +20,12 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jIh-l9-6fS" customClass="GMSMapView">
                                 <rect key="frame" x="0.0" y="0.0" width="905" height="834"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="plane" translatesAutoresizingMaskIntoConstraints="NO" id="RV2-L6-4Gg">
+                                        <rect key="frame" x="378" y="227" width="149" height="123"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="OV2-Eu-Fvo">
@@ -147,4 +153,7 @@
             <point key="canvasLocation" x="24.280575539568346" y="29.496402877697843"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="plane" width="340" height="340"/>
+    </resources>
 </document>
