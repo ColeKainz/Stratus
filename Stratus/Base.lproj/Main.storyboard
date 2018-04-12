@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="905" height="834"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="plane" translatesAutoresizingMaskIntoConstraints="NO" id="RV2-L6-4Gg">
-                                        <rect key="frame" x="378" y="227" width="149" height="123"/>
+                                        <rect key="frame" x="378" y="227" width="105" height="127"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>

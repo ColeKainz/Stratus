@@ -107,7 +107,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
         
         mapController.updateLongAndLat( longitude: longitude, latitude: latitude )
         mapController.updateBearing( bearing: bearing )
-        mapController.planePosition()
+        mapController.planePosition( bearing: bearing, longitude: longitude, latitude: latitude)
         mapController.setAndUpdateFlightPath()
         mapController.updateCameraPosition()
         

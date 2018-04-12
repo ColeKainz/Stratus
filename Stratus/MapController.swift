@@ -61,12 +61,22 @@ class MapController {
     }
     
     //Our plane icon
-    func planePosition() {
+    //To do: Change plane icon size
+    func planePosition(bearing: Double, longitude: Double, latitude: Double ) {
         marker.position = position
         marker.icon = UIImage(named: "plane")
-        marker.title = "Hello Marker"
+        //marker.title = "Hello Marker"
+        marker.groundAnchor = CGPoint(x: 0.5, y: 0.5)
+        //Figure out how to change size of image
+        marker.rotation = bearing
+        marker.title = "Lat: " + String( format: "%.5f", latitude ) + " " + "Long: " + String( format: "%.5f", longitude )
+        //marker.title = "Ori: " + String( bearing ) + "°"
         marker.tracksViewChanges = true
         marker.map = map
+        
+        //groundTrackLabel.text = "Ori: " + String( bearing ) + "°"
+        //longitudeLabel.text = "Long: " + String( format: "%.5f", longitude )
+        //latitudeLabel.text = "Lat: " + String( format: "%.5f", latitude )
     }
  
     func updateCameraPosition() {
