@@ -144,6 +144,7 @@
                         <outlet property="latitudeLabel" destination="SQh-jZ-2GW" id="qoc-Mv-QvH"/>
                         <outlet property="longitudeLabel" destination="E1t-PE-buf" id="2Gi-A8-cLu"/>
                         <outlet property="mapView" destination="jIh-l9-6fS" id="zYp-BT-iPW"/>
+                        <outlet property="plane" destination="RV2-L6-4Gg" id="J7D-ps-eI6"/>
                         <outlet property="transmitPowerLabel" destination="Nj8-lm-1hQ" id="EaK-Az-Tqa"/>
                         <outlet property="verticalSpeedLabel" destination="srf-8T-Bdw" id="egk-Ng-ees"/>
                     </connections>

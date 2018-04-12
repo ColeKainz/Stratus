@@ -13,9 +13,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
 
     //Map
     @IBOutlet var mapView: GMSMapView!
-    var planeView: UIImageView?
     var mapController: MapController!
-    
+    @IBOutlet weak var plane: UIImageView!
     //Zoom Buttons (+ and -)
     //Setting zoom as global variable will allow methods in class to manipulate zoom value
     
@@ -71,7 +70,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
         let plane = UIImage(named: "plane.png")
         planeView = UIImageView(image: plane)
         */
-    
+      
+        /*
+        let marker = GMSMarker(position: position)
+        marker.title = "Hello Marker"
+        marker.map = GMSMapView
+    */
         
         
         //Adding a KML map
@@ -79,6 +83,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
         let url = URL(fileURLWithPath: path!)
         let kmlPaser = GMUKMLParser(url: url)
         kmlPaser.parse()
+        
+        
         
         //Rendering the KML Map
         let renderer = GMUGeometryRenderer(
@@ -101,6 +107,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
         
         mapController.updateLongAndLat( longitude: longitude, latitude: latitude )
         mapController.updateBearing( bearing: bearing )
+        mapController.planePosition()
         mapController.setAndUpdateFlightPath()
         mapController.updateCameraPosition()
         

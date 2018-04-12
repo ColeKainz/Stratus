@@ -19,6 +19,7 @@ class MapController {
     var prevPosition: CLLocationCoordinate2D
     var position: CLLocationCoordinate2D
     
+    let marker = GMSMarker()
     let linePath = GMSMutablePath()
     let polylinePath: GMSPolyline
     
@@ -59,6 +60,15 @@ class MapController {
         linePath.add( position )
     }
     
+    //Our plane icon
+    func planePosition() {
+        marker.position = position
+        marker.icon = UIImage(named: "plane")
+        marker.title = "Hello Marker"
+        marker.tracksViewChanges = true
+        marker.map = map
+    }
+ 
     func updateCameraPosition() {
         let camera = GMSCameraPosition.camera(
             withTarget: position,
