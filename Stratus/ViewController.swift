@@ -18,6 +18,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
     //Zoom Buttons (+ and -)
     //Setting zoom as global variable will allow methods in class to manipulate zoom value
     
+    
+    @IBAction func zoomStepper(_ sender: UIStepper) {
+        self.mapController.setZoom( zoom: Float(sender.value))
+    }
+    
+    /*
     @IBAction func zoomIn( _ sender: Any ) {
         self.mapController.zoomIn();
     }
@@ -25,10 +31,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
     @IBAction func zoomOut( _ sender: Any ) {
         self.mapController.zoomOut();
     }
+ */
     
+    /*
     @IBAction func zoomSlider( _ sender: UISlider ) {
         self.mapController.setZoom( zoom: sender.value )
     }
+ */
     
     @IBOutlet weak var batteryLabel: UILabel!
     @IBOutlet weak var transmitPowerLabel: UILabel!

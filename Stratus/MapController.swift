@@ -33,7 +33,7 @@ class MapController {
         polylinePath = GMSPolyline( path: linePath )
         polylinePath.map = map
     }
-    
+    /*
     func zoomIn() {
         zoom = zoom + zoomIncrement
         map.animate(toZoom: zoom)
@@ -42,7 +42,7 @@ class MapController {
     func zoomOut() {
         zoom = zoom - zoomIncrement
         map.animate(toZoom: zoom)
-    }
+    } */
     
     func setZoom( zoom: Float ) {
         self.zoom = zoom
