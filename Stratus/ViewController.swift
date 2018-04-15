@@ -23,6 +23,28 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
         self.mapController.setZoom( zoom: Float(sender.value))
     }
     
+    //The only things that should be changed are
+    //zoom, viewingangle (optional), and bearing
+    @IBAction func trackingMode(_ sender: UIButton) {
+        //stratusData: StratusDataFetcher.StratusDataStruct
+        
+        //mapView.settings.myLocationButton = true
+        
+    }
+    
+    func trackingMode(bearing: Double) {
+        let trackingCamera = GMSCameraPosition.camera(withLatitude: -33,
+                                                      longitude: 151,
+                                                      zoom: 6,
+                                                      bearing: bearing,
+                                                      viewingAngle: 45)
+        mapView.camera = trackingCamera
+    }
+    
+    func trackingCamera(bearing: Double){
+    }
+    
+    
     /*
     @IBAction func zoomIn( _ sender: Any ) {
         self.mapController.zoomIn();
@@ -62,29 +84,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
         
         //Show user location
         mapView.isMyLocationEnabled = true
+        //User location button
         mapView.settings.myLocationButton = true
-        
-        
-        //Adding a marker]
-        /*
-        let plane = UIImage(named: "plane.png")
-        planeView = UIImageView(image: plane)
-        */
-      
-        /*
-        let marker = GMSMarker(position: position)
-        marker.title = "Hello Marker"
-        marker.map = GMSMapView
-    */
-        
-        
+        //Compass button
+        mapView.settings.compassButton = true
+
         //Adding a KML map
         let path = Bundle.main.path(forResource: "states", ofType: "kml")
         let url = URL(fileURLWithPath: path!)
         let kmlPaser = GMUKMLParser(url: url)
         kmlPaser.parse()
-        
-        
         
         //Rendering the KML Map
         let renderer = GMUGeometryRenderer(
@@ -110,6 +119,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
         mapController.planePosition( bearing: bearing, longitude: longitude, latitude: latitude)
         mapController.setAndUpdateFlightPath()
         mapController.updateCameraPosition()
+        
+        mapController.trackingMode(bearing: bearing)
+        
         
         batteryLabel.text = "Battery: " + String( stratusData.battery)
         transmitPowerLabel.text = "Signal: " + String( stratusData.transmitPower )

@@ -34,16 +34,6 @@ class MapController {
         polylinePath = GMSPolyline( path: linePath )
         polylinePath.map = map
     }
-    /*
-    func zoomIn() {
-        zoom = zoom + zoomIncrement
-        map.animate(toZoom: zoom)
-    }
-    
-    func zoomOut() {
-        zoom = zoom - zoomIncrement
-        map.animate(toZoom: zoom)
-    } */
     
     func setZoom( zoom: Float ) {
         self.zoom = zoom
@@ -65,6 +55,9 @@ class MapController {
     func planePosition(bearing: Double, longitude: Double, latitude: Double ) {
         marker.position = position
         marker.icon = UIImage(named: "plane")
+        /*
+        let size = CGSize(width: (marker.icon?.size.width)! / 2, height: (marker.icon?.size.width)! / 2) */
+        
         //marker.title = "Hello Marker"
         marker.groundAnchor = CGPoint(x: 0.5, y: 0.5)
         //Figure out how to change size of image
@@ -78,7 +71,39 @@ class MapController {
         //longitudeLabel.text = "Long: " + String( format: "%.5f", longitude )
         //latitudeLabel.text = "Lat: " + String( format: "%.5f", latitude )
     }
- 
+    
+   // extension UIImage {
+    /*
+        func resizeImageWith(newSize: CGSize) -> UIImage {
+            let horizontalRatio = newSize.width / size.width
+            let verticalRatio = newSize.heigh / size.width
+      */
+        //}
+    //}
+
+    //Resize image functions
+    /* NOTE: Madelyn will focus trying to change the image reponsively
+    func resizeImage(image: UIImage /*newWidth: CGFloat*/) -> UIImage {
+        //let scale = newWidth / image.size.width
+        //let newHeight = image.size.height * scale
+        UIGraphicsBeginImageContext(CGSize(width: 100, height: 100))
+        image.draw(in: CGRect(x: 0, y: 0, width: 100, height: 100))
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage!
+    } */
+    
+    
+    func trackingMode(bearing: Double) {
+        
+        let trackingCamera = GMSCameraPosition.camera(withTarget: position,
+                                             zoom: 10,
+                                             bearing: bearing,
+                                             viewingAngle: 45)
+        map.camera = trackingCamera
+    }
+
     func updateCameraPosition() {
         let camera = GMSCameraPosition.camera(
             withTarget: position,

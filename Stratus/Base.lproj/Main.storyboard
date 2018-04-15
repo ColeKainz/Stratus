@@ -101,6 +101,14 @@
                                     <action selector="zoomStepper:" destination="BYZ-38-t0r" eventType="valueChanged" id="UHy-bx-4br"/>
                                 </connections>
                             </stepper>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eRe-4B-Ges">
+                                <rect key="frame" x="957" y="675" width="102" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Tracking Mode"/>
+                                <connections>
+                                    <action selector="trackingMode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Mp-PV-fAj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
