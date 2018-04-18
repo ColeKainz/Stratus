@@ -11,34 +11,9 @@ import GoogleMaps
 
 class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserver {
 
-    //Map
-    @IBOutlet var mapView: GMSMapView!
-    var mapController: MapController!
-    @IBOutlet weak var plane: UIImageView!
-    //Zoom Buttons (+ and -)
-    //Setting zoom as global variable will allow methods in class to manipulate zoom value
+    var mapViewController: MapViewController!
     
-    
-    @IBAction func zoomStepper(_ sender: UIStepper) {
-        self.mapController.setZoom( zoom: Float(sender.value))
-    }
-    
-    /*
-    @IBAction func zoomIn( _ sender: Any ) {
-        self.mapController.zoomIn();
-    }
-    
-    @IBAction func zoomOut( _ sender: Any ) {
-        self.mapController.zoomOut();
-    }
- */
-    
-    /*
-    @IBAction func zoomSlider( _ sender: UISlider ) {
-        self.mapController.setZoom( zoom: sender.value )
-    }
- */
-    
+    @IBOutlet weak var mapViewContainer: UIView!
     @IBOutlet weak var batteryLabel: UILabel!
     @IBOutlet weak var transmitPowerLabel: UILabel!
     @IBOutlet weak var gpsFixValidLabel: UILabel!
@@ -58,41 +33,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
         fetcher.attachObserver( observer: self )
         fetcher.setupSockets()
         
-        mapController = MapController( map: mapView, zoom: 5.5, zoomIncrement: 1 )
-        
-        //Show user location
-        mapView.isMyLocationEnabled = true
-        mapView.settings.myLocationButton = true
-        
-        
-        //Adding a marker]
-        /*
-        let plane = UIImage(named: "plane.png")
-        planeView = UIImageView(image: plane)
-        */
-      
-        /*
-        let marker = GMSMarker(position: position)
-        marker.title = "Hello Marker"
-        marker.map = GMSMapView
-    */
-        
-        
-        //Adding a KML map
-        let path = Bundle.main.path(forResource: "states", ofType: "kml")
-        let url = URL(fileURLWithPath: path!)
-        let kmlPaser = GMUKMLParser(url: url)
-        kmlPaser.parse()
-        
-        
-        
-        //Rendering the KML Map
-        let renderer = GMUGeometryRenderer(
-            map: mapView,
-            geometries: kmlPaser.placemarks,
-            styles: kmlPaser.styles);
-        mapView.isMyLocationEnabled = true //for testing
-        renderer.render()
+        guard let mapController = childViewControllers.first as? MapViewController else {
+            fatalError( "Check storyboard for missing MapViewController" )
+        }
+        mapViewController = mapController
     }
 
     override func didReceiveMemoryWarning() {
@@ -100,16 +44,19 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
         // Dispose of any resources that can be recreated.
     }
     
+    //Zoom Buttons (+ and -)
+    //Setting zoom as global variable will allow methods in class to manipulate zoom value.
+    @IBAction func zoomStepper(_ sender: UIStepper) {
+        self.mapViewController.setZoom( zoom: Float(sender.value))
+    }
+    
     func onUpdate( stratusData: StratusDataFetcher.StratusDataStruct ) {
         let longitude = StratusModel.convertToCoords( coord: stratusData.longitude )
         let latitude = StratusModel.convertToCoords( coord: stratusData.latitude )
         let bearing = StratusModel.convertGroundTrack( rawBearing: stratusData.groundTrack )
         
-        mapController.updateLongAndLat( longitude: longitude, latitude: latitude )
-        mapController.updateBearing( bearing: bearing )
-        mapController.planePosition( bearing: bearing, longitude: longitude, latitude: latitude)
-        mapController.setAndUpdateFlightPath()
-        mapController.updateCameraPosition()
+        mapViewController.updateMarker( longitude: longitude, latitude: latitude, bearing: bearing )
+        mapViewController.setAndUpdateFlightPath()
         
         batteryLabel.text = "Battery: " + String( stratusData.battery)
         transmitPowerLabel.text = "Signal: " + String( stratusData.transmitPower )
