@@ -91,7 +91,6 @@
                                     <action selector="zoomStepper:" destination="BYZ-38-t0r" eventType="valueChanged" id="UHy-bx-4br"/>
                                 </connections>
                             </stepper>
-<<<<<<< HEAD
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D4z-JH-Ei2">
                                 <rect key="frame" x="0.0" y="0.0" width="883" height="834"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -99,16 +98,6 @@
                                     <segue destination="AWJ-vk-WpZ" kind="embed" id="AXZ-Jx-flU"/>
                                 </connections>
                             </containerView>
-=======
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eRe-4B-Ges">
-                                <rect key="frame" x="957" y="675" width="102" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Tracking Mode"/>
-                                <connections>
-                                    <action selector="trackingMode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Mp-PV-fAj"/>
-                                </connections>
-                            </button>
->>>>>>> 5e164aece02844083852369658ff833f72edb9a3
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -194,6 +183,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Qhm-zi-Lug"/>
                     </view>
                     <connections>
                         <outlet property="compassButton" destination="CJf-ih-rKo" id="mmG-Kl-lhl"/>

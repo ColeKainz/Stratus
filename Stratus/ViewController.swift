@@ -11,59 +11,7 @@ import GoogleMaps
 
 class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserver {
 
-<<<<<<< HEAD
     var mapViewController: MapViewController!
-=======
-    //Map
-    @IBOutlet var mapView: GMSMapView!
-    var mapController: MapController!
-    @IBOutlet weak var plane: UIImageView!
-    //Zoom Buttons (+ and -)
-    //Setting zoom as global variable will allow methods in class to manipulate zoom value
-    
-    
-    @IBAction func zoomStepper(_ sender: UIStepper) {
-        self.mapController.setZoom( zoom: Float(sender.value))
-    }
-    
-    //The only things that should be changed are
-    //zoom, viewingangle (optional), and bearing
-    @IBAction func trackingMode(_ sender: UIButton) {
-        //stratusData: StratusDataFetcher.StratusDataStruct
-        
-        //mapView.settings.myLocationButton = true
-        
-    }
-    
-    func trackingMode(bearing: Double) {
-        let trackingCamera = GMSCameraPosition.camera(withLatitude: -33,
-                                                      longitude: 151,
-                                                      zoom: 6,
-                                                      bearing: bearing,
-                                                      viewingAngle: 45)
-        mapView.camera = trackingCamera
-    }
-    
-    func trackingCamera(bearing: Double){
-    }
-    
-    
-    /*
-    @IBAction func zoomIn( _ sender: Any ) {
-        self.mapController.zoomIn();
-    }
-    
-    @IBAction func zoomOut( _ sender: Any ) {
-        self.mapController.zoomOut();
-    }
- */
-    
-    /*
-    @IBAction func zoomSlider( _ sender: UISlider ) {
-        self.mapController.setZoom( zoom: sender.value )
-    }
- */
->>>>>>> 5e164aece02844083852369658ff833f72edb9a3
     
     @IBOutlet weak var mapViewContainer: UIView!
     @IBOutlet weak var batteryLabel: UILabel!
@@ -85,35 +33,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
         fetcher.attachObserver( observer: self )
         fetcher.setupSockets()
         
-<<<<<<< HEAD
         guard let mapController = childViewControllers.first as? MapViewController else {
             fatalError( "Check storyboard for missing MapViewController" )
         }
         mapViewController = mapController
-=======
-        mapController = MapController( map: mapView, zoom: 5.5, zoomIncrement: 1 )
-        
-        //Show user location
-        mapView.isMyLocationEnabled = true
-        //User location button
-        mapView.settings.myLocationButton = true
-        //Compass button
-        mapView.settings.compassButton = true
-
-        //Adding a KML map
-        let path = Bundle.main.path(forResource: "states", ofType: "kml")
-        let url = URL(fileURLWithPath: path!)
-        let kmlPaser = GMUKMLParser(url: url)
-        kmlPaser.parse()
-        
-        //Rendering the KML Map
-        let renderer = GMUGeometryRenderer(
-            map: mapView,
-            geometries: kmlPaser.placemarks,
-            styles: kmlPaser.styles);
-        mapView.isMyLocationEnabled = true //for testing
-        renderer.render()
->>>>>>> 5e164aece02844083852369658ff833f72edb9a3
     }
 
     override func didReceiveMemoryWarning() {
@@ -134,9 +57,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
         
         mapViewController.updateMarker( longitude: longitude, latitude: latitude, bearing: bearing )
         mapViewController.setAndUpdateFlightPath()
-        
-        mapController.trackingMode(bearing: bearing)
-        
         
         batteryLabel.text = "Battery: " + String( stratusData.battery)
         transmitPowerLabel.text = "Signal: " + String( stratusData.transmitPower )
