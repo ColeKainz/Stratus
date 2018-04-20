@@ -7,39 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3F02F59B204E0DE1005643D1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F02F59A204E0DE1005643D1 /* CoreLocation.framework */; };
-		3F02F59D204E15AF005643D1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F02F59C204E15AF005643D1 /* MapKit.framework */; };
-		3F62656A20732D7F001B8AC5 /* GoogleMapsBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F62656920732D7E001B8AC5 /* GoogleMapsBase.framework */; };
-		3F62656C20732D8A001B8AC5 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F62656B20732D8A001B8AC5 /* GoogleMaps.framework */; };
-		3F62656E20732D94001B8AC5 /* GoogleMapsCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F62656D20732D94001B8AC5 /* GoogleMapsCore.framework */; };
-		3F62656F20732DAB001B8AC5 /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F75B7292040AF9E00274573 /* CocoaAsyncSocket.framework */; };
-		3F62657320732E66001B8AC5 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F62657220732E66001B8AC5 /* Accelerate.framework */; };
-		3F62657520732E71001B8AC5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F62657420732E71001B8AC5 /* CoreData.framework */; };
-		3F62657720732E82001B8AC5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F62657620732E82001B8AC5 /* CoreGraphics.framework */; };
-		3F62657920732E8C001B8AC5 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F62657820732E8C001B8AC5 /* CoreImage.framework */; };
-		3F62657B20732E99001B8AC5 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F62657A20732E99001B8AC5 /* CoreTelephony.framework */; };
-		3F62657D20732EA2001B8AC5 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F62657C20732EA2001B8AC5 /* CoreText.framework */; };
-		3F62657F20732EAC001B8AC5 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F62657E20732EAC001B8AC5 /* GLKit.framework */; };
-		3F62658120732EB4001B8AC5 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F62658020732EB4001B8AC5 /* ImageIO.framework */; };
-		3F62658320732EC2001B8AC5 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F62658220732EC2001B8AC5 /* libc++.tbd */; };
-		3F62658520732ECC001B8AC5 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F62658420732ECB001B8AC5 /* libz.tbd */; };
-		3F62658720732ED4001B8AC5 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F62658620732ED4001B8AC5 /* OpenGLES.framework */; };
-		3F62658920732EDB001B8AC5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F62658820732EDB001B8AC5 /* QuartzCore.framework */; };
-		3F62658B20732EE2001B8AC5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F62658A20732EE2001B8AC5 /* SystemConfiguration.framework */; };
-		3F62658D20732EEA001B8AC5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F62658C20732EEA001B8AC5 /* UIKit.framework */; };
-		3F6265912073310D001B8AC5 /* GoogleMapsM4B.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F6265902073310D001B8AC5 /* GoogleMapsM4B.framework */; };
-		3F62659320733676001B8AC5 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3F62659220733676001B8AC5 /* GoogleMaps.bundle */; };
+		3C3CB0C529A4D8CF5494326F /* Pods_Stratus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D10EE6B448AF266E42440D4F /* Pods_Stratus.framework */; };
 		3F626595207338B8001B8AC5 /* states.kml in Resources */ = {isa = PBXBuildFile; fileRef = 3F626594207338B8001B8AC5 /* states.kml */; };
-		3F6265B220733D08001B8AC5 /* GMUGeometryRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F62659B20733D07001B8AC5 /* GMUGeometryRenderer.m */; };
-		3F6265B320733D08001B8AC5 /* GMUKMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F62659D20733D07001B8AC5 /* GMUKMLParser.m */; };
-		3F6265B420733D08001B8AC5 /* GMUFeature.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F6265A020733D07001B8AC5 /* GMUFeature.m */; };
-		3F6265B520733D08001B8AC5 /* GMUGeometryCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F6265A320733D07001B8AC5 /* GMUGeometryCollection.m */; };
-		3F6265B620733D08001B8AC5 /* GMUGroundOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F6265A620733D07001B8AC5 /* GMUGroundOverlay.m */; };
-		3F6265B720733D08001B8AC5 /* GMULineString.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F6265A820733D07001B8AC5 /* GMULineString.m */; };
-		3F6265B820733D08001B8AC5 /* GMUPlacemark.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F6265AA20733D07001B8AC5 /* GMUPlacemark.m */; };
-		3F6265B920733D08001B8AC5 /* GMUPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F6265AC20733D07001B8AC5 /* GMUPoint.m */; };
-		3F6265BA20733D08001B8AC5 /* GMUPolygon.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F6265AE20733D07001B8AC5 /* GMUPolygon.m */; };
-		3F6265BB20733D08001B8AC5 /* GMUStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F6265B020733D07001B8AC5 /* GMUStyle.m */; };
 		3F6265C0207D5712001B8AC5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6265BF207D5712001B8AC5 /* MapViewController.swift */; };
 		3F73C9F1202CF98E00DB1D20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F73C9F0202CF98E00DB1D20 /* AppDelegate.swift */; };
 		3F73C9F3202CF98E00DB1D20 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F73C9F2202CF98E00DB1D20 /* ViewController.swift */; };
@@ -49,11 +18,12 @@
 		3F73CA06202CF98F00DB1D20 /* StratusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F73CA05202CF98F00DB1D20 /* StratusTests.swift */; };
 		3F73CA11202CF98F00DB1D20 /* StratusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F73CA10202CF98F00DB1D20 /* StratusUITests.swift */; };
 		3F73CA1F202E411B00DB1D20 /* StratusDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F73CA1E202E411B00DB1D20 /* StratusDataFetcher.swift */; };
-		3F75B7322040FB5200274573 /* CocoaAsyncSocket.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3F75B7292040AF9E00274573 /* CocoaAsyncSocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3F75B735204100F600274573 /* UDPSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F75B734204100F600274573 /* UDPSocket.swift */; };
 		3F75B7372046853600274573 /* StratusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F75B7362046853600274573 /* StratusModel.swift */; };
 		3F8D7DF3203B5877008711DA /* StratusObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8D7DF2203B5877008711DA /* StratusObserver.swift */; };
 		3F94923F2060340A00DB681E /* TimeoutTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F94923E2060340A00DB681E /* TimeoutTimer.swift */; };
+		68EB82DD2C7997246068D398 /* Pods_StratusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5CDF57779A13378B5E4BF3A /* Pods_StratusTests.framework */; };
+		FE9D341C37447078DEACAFD6 /* Pods_StratusUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31AF4F2CC97049E45E497944 /* Pods_StratusUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,7 +50,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				3F75B7322040FB5200274573 /* CocoaAsyncSocket.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -88,52 +57,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3F02F59A204E0DE1005643D1 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		3F02F59C204E15AF005643D1 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		3F62656920732D7E001B8AC5 /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMapsBase.framework; sourceTree = "<group>"; };
-		3F62656B20732D8A001B8AC5 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
-		3F62656D20732D94001B8AC5 /* GoogleMapsCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMapsCore.framework; sourceTree = "<group>"; };
-		3F62657220732E66001B8AC5 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
-		3F62657420732E71001B8AC5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		3F62657620732E82001B8AC5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		3F62657820732E8C001B8AC5 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
-		3F62657A20732E99001B8AC5 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
-		3F62657C20732EA2001B8AC5 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
-		3F62657E20732EAC001B8AC5 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
-		3F62658020732EB4001B8AC5 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
-		3F62658220732EC2001B8AC5 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
-		3F62658420732ECB001B8AC5 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		3F62658620732ED4001B8AC5 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
-		3F62658820732EDB001B8AC5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		3F62658A20732EE2001B8AC5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		3F62658C20732EEA001B8AC5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		3F62658E20732FD4001B8AC5 /* GoogleMapsM4B.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsM4B.framework; path = "../../../Downloads/GoogleMaps-2.6.0/M4B/Frameworks/GoogleMapsM4B.framework"; sourceTree = "<group>"; };
-		3F6265902073310D001B8AC5 /* GoogleMapsM4B.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMapsM4B.framework; sourceTree = "<group>"; };
-		3F62659220733676001B8AC5 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		31AF4F2CC97049E45E497944 /* Pods_StratusUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StratusUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F626594207338B8001B8AC5 /* states.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = states.kml; sourceTree = "<group>"; };
-		3F62659A20733D07001B8AC5 /* GMUGeometryRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMUGeometryRenderer.h; sourceTree = "<group>"; };
-		3F62659B20733D07001B8AC5 /* GMUGeometryRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMUGeometryRenderer.m; sourceTree = "<group>"; };
-		3F62659C20733D07001B8AC5 /* GMUKMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMUKMLParser.h; sourceTree = "<group>"; };
-		3F62659D20733D07001B8AC5 /* GMUKMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMUKMLParser.m; sourceTree = "<group>"; };
-		3F62659F20733D07001B8AC5 /* GMUFeature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMUFeature.h; sourceTree = "<group>"; };
-		3F6265A020733D07001B8AC5 /* GMUFeature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMUFeature.m; sourceTree = "<group>"; };
-		3F6265A120733D07001B8AC5 /* GMUGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMUGeometry.h; sourceTree = "<group>"; };
-		3F6265A220733D07001B8AC5 /* GMUGeometryCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMUGeometryCollection.h; sourceTree = "<group>"; };
-		3F6265A320733D07001B8AC5 /* GMUGeometryCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMUGeometryCollection.m; sourceTree = "<group>"; };
-		3F6265A420733D07001B8AC5 /* GMUGeometryContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMUGeometryContainer.h; sourceTree = "<group>"; };
-		3F6265A520733D07001B8AC5 /* GMUGroundOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMUGroundOverlay.h; sourceTree = "<group>"; };
-		3F6265A620733D07001B8AC5 /* GMUGroundOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMUGroundOverlay.m; sourceTree = "<group>"; };
-		3F6265A720733D07001B8AC5 /* GMULineString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMULineString.h; sourceTree = "<group>"; };
-		3F6265A820733D07001B8AC5 /* GMULineString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMULineString.m; sourceTree = "<group>"; };
-		3F6265A920733D07001B8AC5 /* GMUPlacemark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMUPlacemark.h; sourceTree = "<group>"; };
-		3F6265AA20733D07001B8AC5 /* GMUPlacemark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMUPlacemark.m; sourceTree = "<group>"; };
-		3F6265AB20733D07001B8AC5 /* GMUPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMUPoint.h; sourceTree = "<group>"; };
-		3F6265AC20733D07001B8AC5 /* GMUPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMUPoint.m; sourceTree = "<group>"; };
-		3F6265AD20733D07001B8AC5 /* GMUPolygon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMUPolygon.h; sourceTree = "<group>"; };
-		3F6265AE20733D07001B8AC5 /* GMUPolygon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMUPolygon.m; sourceTree = "<group>"; };
-		3F6265AF20733D07001B8AC5 /* GMUStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMUStyle.h; sourceTree = "<group>"; };
-		3F6265B020733D07001B8AC5 /* GMUStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMUStyle.m; sourceTree = "<group>"; };
-		3F6265BE207349EA001B8AC5 /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
 		3F6265BF207D5712001B8AC5 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		3F73C9ED202CF98E00DB1D20 /* Stratus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stratus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F73C9F0202CF98E00DB1D20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -149,11 +74,18 @@
 		3F73CA10202CF98F00DB1D20 /* StratusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StratusUITests.swift; sourceTree = "<group>"; };
 		3F73CA12202CF98F00DB1D20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F73CA1E202E411B00DB1D20 /* StratusDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StratusDataFetcher.swift; sourceTree = "<group>"; };
-		3F75B7292040AF9E00274573 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CocoaAsyncSocket.framework; sourceTree = "<group>"; };
 		3F75B734204100F600274573 /* UDPSocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDPSocket.swift; sourceTree = "<group>"; };
 		3F75B7362046853600274573 /* StratusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StratusModel.swift; sourceTree = "<group>"; };
 		3F8D7DF2203B5877008711DA /* StratusObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StratusObserver.swift; sourceTree = "<group>"; };
 		3F94923E2060340A00DB681E /* TimeoutTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeoutTimer.swift; sourceTree = "<group>"; };
+		667CE3C60D7348C9CF7CFF3D /* Pods-StratusUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StratusUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StratusUITests/Pods-StratusUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6E55CAE39378FDEDF9B7FF72 /* Pods-StratusUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StratusUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StratusUITests/Pods-StratusUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A1C9C7E0DAD43F637FB144E8 /* Pods-Stratus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stratus.release.xcconfig"; path = "Pods/Target Support Files/Pods-Stratus/Pods-Stratus.release.xcconfig"; sourceTree = "<group>"; };
+		AEB6EC30D6EBBF688328E9E3 /* Pods-Stratus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stratus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Stratus/Pods-Stratus.debug.xcconfig"; sourceTree = "<group>"; };
+		D10EE6B448AF266E42440D4F /* Pods_Stratus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stratus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5CDF57779A13378B5E4BF3A /* Pods_StratusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StratusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F44FB88D22988DED6E46E60A /* Pods-StratusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StratusTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StratusTests/Pods-StratusTests.release.xcconfig"; sourceTree = "<group>"; };
+		F622D53C161A723822200277 /* Pods-StratusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StratusTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StratusTests/Pods-StratusTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,27 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F62658D20732EEA001B8AC5 /* UIKit.framework in Frameworks */,
-				3F62658B20732EE2001B8AC5 /* SystemConfiguration.framework in Frameworks */,
-				3F62658920732EDB001B8AC5 /* QuartzCore.framework in Frameworks */,
-				3F62658720732ED4001B8AC5 /* OpenGLES.framework in Frameworks */,
-				3F62658520732ECC001B8AC5 /* libz.tbd in Frameworks */,
-				3F62658320732EC2001B8AC5 /* libc++.tbd in Frameworks */,
-				3F62658120732EB4001B8AC5 /* ImageIO.framework in Frameworks */,
-				3F62657F20732EAC001B8AC5 /* GLKit.framework in Frameworks */,
-				3F62657D20732EA2001B8AC5 /* CoreText.framework in Frameworks */,
-				3F62657B20732E99001B8AC5 /* CoreTelephony.framework in Frameworks */,
-				3F62657920732E8C001B8AC5 /* CoreImage.framework in Frameworks */,
-				3F62657720732E82001B8AC5 /* CoreGraphics.framework in Frameworks */,
-				3F62657520732E71001B8AC5 /* CoreData.framework in Frameworks */,
-				3F62657320732E66001B8AC5 /* Accelerate.framework in Frameworks */,
-				3F02F59D204E15AF005643D1 /* MapKit.framework in Frameworks */,
-				3F62656E20732D94001B8AC5 /* GoogleMapsCore.framework in Frameworks */,
-				3F6265912073310D001B8AC5 /* GoogleMapsM4B.framework in Frameworks */,
-				3F62656A20732D7F001B8AC5 /* GoogleMapsBase.framework in Frameworks */,
-				3F62656C20732D8A001B8AC5 /* GoogleMaps.framework in Frameworks */,
-				3F02F59B204E0DE1005643D1 /* CoreLocation.framework in Frameworks */,
-				3F62656F20732DAB001B8AC5 /* CocoaAsyncSocket.framework in Frameworks */,
+				3C3CB0C529A4D8CF5494326F /* Pods_Stratus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68EB82DD2C7997246068D398 /* Pods_StratusTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,78 +109,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE9D341C37447078DEACAFD6 /* Pods_StratusUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3F02F599204E0DE1005643D1 /* Frameworks */ = {
+		1D454B3F33F388AA4FB1132C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3F62659220733676001B8AC5 /* GoogleMaps.bundle */,
-				3F6265902073310D001B8AC5 /* GoogleMapsM4B.framework */,
-				3F62658C20732EEA001B8AC5 /* UIKit.framework */,
-				3F62658A20732EE2001B8AC5 /* SystemConfiguration.framework */,
-				3F62658820732EDB001B8AC5 /* QuartzCore.framework */,
-				3F62658620732ED4001B8AC5 /* OpenGLES.framework */,
-				3F62658420732ECB001B8AC5 /* libz.tbd */,
-				3F62658220732EC2001B8AC5 /* libc++.tbd */,
-				3F62658E20732FD4001B8AC5 /* GoogleMapsM4B.framework */,
-				3F62658020732EB4001B8AC5 /* ImageIO.framework */,
-				3F62657E20732EAC001B8AC5 /* GLKit.framework */,
-				3F62657C20732EA2001B8AC5 /* CoreText.framework */,
-				3F62657A20732E99001B8AC5 /* CoreTelephony.framework */,
-				3F62657820732E8C001B8AC5 /* CoreImage.framework */,
-				3F62657620732E82001B8AC5 /* CoreGraphics.framework */,
-				3F62657420732E71001B8AC5 /* CoreData.framework */,
-				3F62657220732E66001B8AC5 /* Accelerate.framework */,
-				3F75B7292040AF9E00274573 /* CocoaAsyncSocket.framework */,
-				3F62656D20732D94001B8AC5 /* GoogleMapsCore.framework */,
-				3F62656B20732D8A001B8AC5 /* GoogleMaps.framework */,
-				3F62656920732D7E001B8AC5 /* GoogleMapsBase.framework */,
-				3F02F59C204E15AF005643D1 /* MapKit.framework */,
-				3F02F59A204E0DE1005643D1 /* CoreLocation.framework */,
+				AEB6EC30D6EBBF688328E9E3 /* Pods-Stratus.debug.xcconfig */,
+				A1C9C7E0DAD43F637FB144E8 /* Pods-Stratus.release.xcconfig */,
+				F622D53C161A723822200277 /* Pods-StratusTests.debug.xcconfig */,
+				F44FB88D22988DED6E46E60A /* Pods-StratusTests.release.xcconfig */,
+				6E55CAE39378FDEDF9B7FF72 /* Pods-StratusUITests.debug.xcconfig */,
+				667CE3C60D7348C9CF7CFF3D /* Pods-StratusUITests.release.xcconfig */,
 			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		3F62659620733D07001B8AC5 /* Geometry */ = {
-			isa = PBXGroup;
-			children = (
-				3F6265BE207349EA001B8AC5 /* BridgingHeader.h */,
-				3F62659C20733D07001B8AC5 /* GMUKMLParser.h */,
-				3F62659A20733D07001B8AC5 /* GMUGeometryRenderer.h */,
-				3F62659B20733D07001B8AC5 /* GMUGeometryRenderer.m */,
-				3F62659D20733D07001B8AC5 /* GMUKMLParser.m */,
-				3F62659E20733D07001B8AC5 /* Model */,
-			);
-			path = Geometry;
-			sourceTree = "<group>";
-		};
-		3F62659E20733D07001B8AC5 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				3F62659F20733D07001B8AC5 /* GMUFeature.h */,
-				3F6265A020733D07001B8AC5 /* GMUFeature.m */,
-				3F6265A120733D07001B8AC5 /* GMUGeometry.h */,
-				3F6265A220733D07001B8AC5 /* GMUGeometryCollection.h */,
-				3F6265A320733D07001B8AC5 /* GMUGeometryCollection.m */,
-				3F6265A420733D07001B8AC5 /* GMUGeometryContainer.h */,
-				3F6265A520733D07001B8AC5 /* GMUGroundOverlay.h */,
-				3F6265A620733D07001B8AC5 /* GMUGroundOverlay.m */,
-				3F6265A720733D07001B8AC5 /* GMULineString.h */,
-				3F6265A820733D07001B8AC5 /* GMULineString.m */,
-				3F6265A920733D07001B8AC5 /* GMUPlacemark.h */,
-				3F6265AA20733D07001B8AC5 /* GMUPlacemark.m */,
-				3F6265AB20733D07001B8AC5 /* GMUPoint.h */,
-				3F6265AC20733D07001B8AC5 /* GMUPoint.m */,
-				3F6265AD20733D07001B8AC5 /* GMUPolygon.h */,
-				3F6265AE20733D07001B8AC5 /* GMUPolygon.m */,
-				3F6265AF20733D07001B8AC5 /* GMUStyle.h */,
-				3F6265B020733D07001B8AC5 /* GMUStyle.m */,
-			);
-			path = Model;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		3F73C9E4202CF98E00DB1D20 = {
@@ -277,7 +136,8 @@
 				3F73CA04202CF98F00DB1D20 /* StratusTests */,
 				3F73CA0F202CF98F00DB1D20 /* StratusUITests */,
 				3F73C9EE202CF98E00DB1D20 /* Products */,
-				3F02F599204E0DE1005643D1 /* Frameworks */,
+				1D454B3F33F388AA4FB1132C /* Pods */,
+				FE9B9E193591E8344F04E19A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -294,7 +154,6 @@
 		3F73C9EF202CF98E00DB1D20 /* Stratus */ = {
 			isa = PBXGroup;
 			children = (
-				3F62659620733D07001B8AC5 /* Geometry */,
 				3F626594207338B8001B8AC5 /* states.kml */,
 				3F73C9F0202CF98E00DB1D20 /* AppDelegate.swift */,
 				3F73C9F2202CF98E00DB1D20 /* ViewController.swift */,
@@ -330,6 +189,16 @@
 			path = StratusUITests;
 			sourceTree = "<group>";
 		};
+		FE9B9E193591E8344F04E19A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D10EE6B448AF266E42440D4F /* Pods_Stratus.framework */,
+				E5CDF57779A13378B5E4BF3A /* Pods_StratusTests.framework */,
+				31AF4F2CC97049E45E497944 /* Pods_StratusUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -337,10 +206,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3F73CA15202CF98F00DB1D20 /* Build configuration list for PBXNativeTarget "Stratus" */;
 			buildPhases = (
+				003D0AB427E8539F544BF4E1 /* [CP] Check Pods Manifest.lock */,
 				3F73C9E9202CF98E00DB1D20 /* Sources */,
 				3F73C9EA202CF98E00DB1D20 /* Frameworks */,
 				3F73C9EB202CF98E00DB1D20 /* Resources */,
 				3F75B7332040FB5200274573 /* Embed Frameworks */,
+				98DD359AB6522DE046A43DA3 /* [CP] Embed Pods Frameworks */,
+				3CC1E1D501A260389C756422 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -355,9 +227,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3F73CA18202CF98F00DB1D20 /* Build configuration list for PBXNativeTarget "StratusTests" */;
 			buildPhases = (
+				EF43BD38F6D01246B8575094 /* [CP] Check Pods Manifest.lock */,
 				3F73C9FD202CF98F00DB1D20 /* Sources */,
 				3F73C9FE202CF98F00DB1D20 /* Frameworks */,
 				3F73C9FF202CF98F00DB1D20 /* Resources */,
+				7A3E341FD2D8422A4CBEC889 /* [CP] Embed Pods Frameworks */,
+				72F28546F9C128F4C2DA7226 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -373,9 +248,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3F73CA1B202CF98F00DB1D20 /* Build configuration list for PBXNativeTarget "StratusUITests" */;
 			buildPhases = (
+				7FA1F3424863788DB47CC2A5 /* [CP] Check Pods Manifest.lock */,
 				3F73CA08202CF98F00DB1D20 /* Sources */,
 				3F73CA09202CF98F00DB1D20 /* Frameworks */,
 				3F73CA0A202CF98F00DB1D20 /* Resources */,
+				4E38006762F388051815DE52 /* [CP] Embed Pods Frameworks */,
+				5127FDAAFE6FE8F114B29853 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -399,7 +277,7 @@
 				TargetAttributes = {
 					3F73C9EC202CF98E00DB1D20 = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 					3F73CA00202CF98F00DB1D20 = {
 						CreatedOnToolsVersion = 9.2;
@@ -441,7 +319,6 @@
 				3F73C9FB202CF98E00DB1D20 /* LaunchScreen.storyboard in Resources */,
 				3F73C9F8202CF98E00DB1D20 /* Assets.xcassets in Resources */,
 				3F73C9F6202CF98E00DB1D20 /* Main.storyboard in Resources */,
-				3F62659320733676001B8AC5 /* GoogleMaps.bundle in Resources */,
 				3F626595207338B8001B8AC5 /* states.kml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -462,29 +339,172 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		003D0AB427E8539F544BF4E1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Stratus-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3CC1E1D501A260389C756422 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Stratus/Pods-Stratus-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Stratus/Pods-Stratus-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4E38006762F388051815DE52 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StratusUITests/Pods-StratusUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5127FDAAFE6FE8F114B29853 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StratusUITests/Pods-StratusUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		72F28546F9C128F4C2DA7226 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StratusTests/Pods-StratusTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7A3E341FD2D8422A4CBEC889 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StratusTests/Pods-StratusTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7FA1F3424863788DB47CC2A5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StratusUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		98DD359AB6522DE046A43DA3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Stratus/Pods-Stratus-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Stratus/Pods-Stratus-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF43BD38F6D01246B8575094 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StratusTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3F73C9E9202CF98E00DB1D20 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				3F73C9F3202CF98E00DB1D20 /* ViewController.swift in Sources */,
-				3F6265B720733D08001B8AC5 /* GMULineString.m in Sources */,
 				3F94923F2060340A00DB681E /* TimeoutTimer.swift in Sources */,
-				3F6265B620733D08001B8AC5 /* GMUGroundOverlay.m in Sources */,
-				3F6265BB20733D08001B8AC5 /* GMUStyle.m in Sources */,
 				3F75B7372046853600274573 /* StratusModel.swift in Sources */,
 				3F75B735204100F600274573 /* UDPSocket.swift in Sources */,
 				3F73C9F1202CF98E00DB1D20 /* AppDelegate.swift in Sources */,
-				3F6265B920733D08001B8AC5 /* GMUPoint.m in Sources */,
 				3F8D7DF3203B5877008711DA /* StratusObserver.swift in Sources */,
-				3F6265B820733D08001B8AC5 /* GMUPlacemark.m in Sources */,
-				3F6265B420733D08001B8AC5 /* GMUFeature.m in Sources */,
 				3F73CA1F202E411B00DB1D20 /* StratusDataFetcher.swift in Sources */,
-				3F6265B220733D08001B8AC5 /* GMUGeometryRenderer.m in Sources */,
-				3F6265B320733D08001B8AC5 /* GMUKMLParser.m in Sources */,
-				3F6265B520733D08001B8AC5 /* GMUGeometryCollection.m in Sources */,
 				3F6265C0207D5712001B8AC5 /* MapViewController.swift in Sources */,
-				3F6265BA20733D08001B8AC5 /* GMUPolygon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -648,10 +668,12 @@
 		};
 		3F73CA16202CF98F00DB1D20 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AEB6EC30D6EBBF688328E9E3 /* Pods-Stratus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PV4YUGV799;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -660,23 +682,24 @@
 				GCC_PREFIX_HEADER = Stratus/GMUKMLParser.pch;
 				INFOPLIST_FILE = Stratus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ndsu.Stratus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = Stratus/Geometry/BridgingHeader.h;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = "Stratus/Geometry/**";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
 		3F73CA17202CF98F00DB1D20 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1C9C7E0DAD43F637FB144E8 /* Pods-Stratus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PV4YUGV799;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -685,19 +708,19 @@
 				GCC_PREFIX_HEADER = Stratus/GMUKMLParser.pch;
 				INFOPLIST_FILE = Stratus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ndsu.Stratus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = Stratus/Geometry/BridgingHeader.h;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = "Stratus/Geometry/**";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};
 		3F73CA19202CF98F00DB1D20 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F622D53C161A723822200277 /* Pods-StratusTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -714,6 +737,7 @@
 		};
 		3F73CA1A202CF98F00DB1D20 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F44FB88D22988DED6E46E60A /* Pods-StratusTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -730,6 +754,7 @@
 		};
 		3F73CA1C202CF98F00DB1D20 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E55CAE39378FDEDF9B7FF72 /* Pods-StratusUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -745,6 +770,7 @@
 		};
 		3F73CA1D202CF98F00DB1D20 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 667CE3C60D7348C9CF7CFF3D /* Pods-StratusUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

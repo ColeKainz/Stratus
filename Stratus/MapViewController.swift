@@ -28,23 +28,11 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     var polylinePath: GMSPolyline!
     
     override func viewDidLoad() {
+        //mapView.mapType = GMSMapViewType.none
         mapView.delegate = self
-        
+
         polylinePath = GMSPolyline( path: linePath )
         polylinePath.map = mapView
-        
-        //Adding a KML map
-        let path = Bundle.main.path( forResource: "states", ofType: "kml" )
-        let url = URL( fileURLWithPath: path! )
-        let kmlPaser = GMUKMLParser( url: url )
-        kmlPaser.parse()
-        
-        //Rendering the KML Map
-        let renderer = GMUGeometryRenderer(
-            map: mapView,
-            geometries: kmlPaser.placemarks,
-            styles: kmlPaser.styles );
-        renderer.render()
     }
     
     override func didReceiveMemoryWarning() {
@@ -98,7 +86,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     }
     
     func mapView( _ mapView: GMSMapView, didChange position: GMSCameraPosition ) {
-        compassButton.imageView?.transform = CGAffineTransform( rotationAngle: CGFloat( position.bearing ) )
+        compassButton.imageView?.transform = CGAffineTransform( rotationAngle: CGFloat( position.bearing * Double.pi / 360 ) )
         
         if !( position.target.latitude == markerPosition.latitude &&
             position.target.longitude == markerPosition.longitude ) {

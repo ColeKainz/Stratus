@@ -91,11 +91,11 @@
                                     <action selector="zoomStepper:" destination="BYZ-38-t0r" eventType="valueChanged" id="UHy-bx-4br"/>
                                 </connections>
                             </stepper>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D4z-JH-Ei2">
-                                <rect key="frame" x="0.0" y="0.0" width="883" height="834"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IFY-KY-JKW">
+                                <rect key="frame" x="0.0" y="0.0" width="898" height="834"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
-                                    <segue destination="AWJ-vk-WpZ" kind="embed" id="AXZ-Jx-flU"/>
+                                    <segue destination="AWJ-vk-WpZ" kind="embed" id="Las-RU-Hdz"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -136,7 +136,6 @@
                         <outlet property="groundTrackLabel" destination="zyo-hK-WaB" id="71Z-rF-AFC"/>
                         <outlet property="latitudeLabel" destination="SQh-jZ-2GW" id="qoc-Mv-QvH"/>
                         <outlet property="longitudeLabel" destination="E1t-PE-buf" id="2Gi-A8-cLu"/>
-                        <outlet property="mapViewContainer" destination="D4z-JH-Ei2" id="NcA-vc-DnS"/>
                         <outlet property="transmitPowerLabel" destination="Nj8-lm-1hQ" id="EaK-Az-Tqa"/>
                         <outlet property="verticalSpeedLabel" destination="srf-8T-Bdw" id="egk-Ng-ees"/>
                     </connections>
@@ -150,31 +149,24 @@
             <objects>
                 <viewController storyboardIdentifier="MapViewController" id="AWJ-vk-WpZ" customClass="MapViewController" customModule="Stratus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dm5-ao-DxD">
-                        <rect key="frame" x="0.0" y="0.0" width="883" height="834"/>
+                        <rect key="frame" x="0.0" y="0.0" width="898" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NwB-ou-paQ" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="0.0" width="883" height="834"/>
+                                <rect key="frame" x="-5" y="0.0" width="883" height="814"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="1" green="0.64016549127945144" blue="0.65345193155904147" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Compass_BG" translatesAutoresizingMaskIntoConstraints="NO" id="8AX-Ad-lJ6">
-                                <rect key="frame" x="30" y="30" width="60" height="60"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="51Y-Xr-hBh">
+                                <rect key="frame" x="30" y="100" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CJf-ih-rKo">
-                                <rect key="frame" x="30" y="30" width="60" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" button="YES" image="YES"/>
-                                </accessibility>
                                 <state key="normal" title="Button" image="Compass_Arrow"/>
                                 <connections>
-                                    <action selector="compassOnClick:" destination="AWJ-vk-WpZ" eventType="touchUpInside" id="hbB-jq-ebU"/>
+                                    <action selector="compassOnClick:" destination="AWJ-vk-WpZ" eventType="touchUpInside" id="MAQ-7l-C2t"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ahn-gh-vKC">
-                                <rect key="frame" x="30" y="90" width="51" height="30"/>
+                                <rect key="frame" x="30" y="160" width="60" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Center!"/>
                                 <connections>
@@ -186,17 +178,16 @@
                         <viewLayoutGuide key="safeArea" id="Qhm-zi-Lug"/>
                     </view>
                     <connections>
-                        <outlet property="compassButton" destination="CJf-ih-rKo" id="mmG-Kl-lhl"/>
-                        <outlet property="mapView" destination="NwB-ou-paQ" id="9Zw-Qr-MHy"/>
+                        <outlet property="compassButton" destination="51Y-Xr-hBh" id="B9h-mb-pNs"/>
+                        <outlet property="mapView" destination="NwB-ou-paQ" id="4s6-IJ-7Se"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1B1-b4-QS2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="296.49280575539569" y="-104.31654676258994"/>
+            <point key="canvasLocation" x="296.22302158273385" y="-104.31654676258994"/>
         </scene>
     </scenes>
     <resources>
         <image name="Compass_Arrow" width="300" height="300"/>
-        <image name="Compass_BG" width="300" height="300"/>
     </resources>
 </document>
