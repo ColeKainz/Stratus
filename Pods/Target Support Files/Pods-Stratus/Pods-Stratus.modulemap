@@ -1,0 +1,6 @@
+framework module Pods_Stratus {
+  umbrella header "Pods-Stratus-umbrella.h"
+
+  export *
+  module * { export * }
+}
