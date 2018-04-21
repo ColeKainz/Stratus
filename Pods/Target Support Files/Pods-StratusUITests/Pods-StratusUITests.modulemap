@@ -1,0 +1,6 @@
+framework module Pods_StratusUITests {
+  umbrella header "Pods-StratusUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

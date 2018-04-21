@@ -12,7 +12,6 @@
 		3F6265C0207D5712001B8AC5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6265BF207D5712001B8AC5 /* MapViewController.swift */; };
 		3F73C9F1202CF98E00DB1D20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F73C9F0202CF98E00DB1D20 /* AppDelegate.swift */; };
 		3F73C9F3202CF98E00DB1D20 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F73C9F2202CF98E00DB1D20 /* ViewController.swift */; };
-		3F73C9F6202CF98E00DB1D20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F73C9F4202CF98E00DB1D20 /* Main.storyboard */; };
 		3F73C9F8202CF98E00DB1D20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F73C9F7202CF98E00DB1D20 /* Assets.xcassets */; };
 		3F73C9FB202CF98E00DB1D20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F73C9F9202CF98E00DB1D20 /* LaunchScreen.storyboard */; };
 		3F73CA06202CF98F00DB1D20 /* StratusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F73CA05202CF98F00DB1D20 /* StratusTests.swift */; };
@@ -22,6 +21,7 @@
 		3F75B7372046853600274573 /* StratusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F75B7362046853600274573 /* StratusModel.swift */; };
 		3F8D7DF3203B5877008711DA /* StratusObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8D7DF2203B5877008711DA /* StratusObserver.swift */; };
 		3F94923F2060340A00DB681E /* TimeoutTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F94923E2060340A00DB681E /* TimeoutTimer.swift */; };
+		3FA0541E208B8C0400C6877A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FA0541C208B8C0400C6877A /* Main.storyboard */; };
 		68EB82DD2C7997246068D398 /* Pods_StratusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5CDF57779A13378B5E4BF3A /* Pods_StratusTests.framework */; };
 		FE9D341C37447078DEACAFD6 /* Pods_StratusUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31AF4F2CC97049E45E497944 /* Pods_StratusUITests.framework */; };
 /* End PBXBuildFile section */
@@ -63,7 +63,6 @@
 		3F73C9ED202CF98E00DB1D20 /* Stratus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stratus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F73C9F0202CF98E00DB1D20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F73C9F2202CF98E00DB1D20 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3F73C9F5202CF98E00DB1D20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3F73C9F7202CF98E00DB1D20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F73C9FA202CF98E00DB1D20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F73C9FC202CF98E00DB1D20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -78,6 +77,7 @@
 		3F75B7362046853600274573 /* StratusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StratusModel.swift; sourceTree = "<group>"; };
 		3F8D7DF2203B5877008711DA /* StratusObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StratusObserver.swift; sourceTree = "<group>"; };
 		3F94923E2060340A00DB681E /* TimeoutTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeoutTimer.swift; sourceTree = "<group>"; };
+		3FA0541D208B8C0400C6877A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		667CE3C60D7348C9CF7CFF3D /* Pods-StratusUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StratusUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StratusUITests/Pods-StratusUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6E55CAE39378FDEDF9B7FF72 /* Pods-StratusUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StratusUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StratusUITests/Pods-StratusUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A1C9C7E0DAD43F637FB144E8 /* Pods-Stratus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stratus.release.xcconfig"; path = "Pods/Target Support Files/Pods-Stratus/Pods-Stratus.release.xcconfig"; sourceTree = "<group>"; };
@@ -163,7 +163,7 @@
 				3F73CA1E202E411B00DB1D20 /* StratusDataFetcher.swift */,
 				3F8D7DF2203B5877008711DA /* StratusObserver.swift */,
 				3F94923E2060340A00DB681E /* TimeoutTimer.swift */,
-				3F73C9F4202CF98E00DB1D20 /* Main.storyboard */,
+				3FA0541C208B8C0400C6877A /* Main.storyboard */,
 				3F73C9F7202CF98E00DB1D20 /* Assets.xcassets */,
 				3F73C9F9202CF98E00DB1D20 /* LaunchScreen.storyboard */,
 				3F73C9FC202CF98E00DB1D20 /* Info.plist */,
@@ -316,9 +316,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FA0541E208B8C0400C6877A /* Main.storyboard in Resources */,
 				3F73C9FB202CF98E00DB1D20 /* LaunchScreen.storyboard in Resources */,
 				3F73C9F8202CF98E00DB1D20 /* Assets.xcassets in Resources */,
-				3F73C9F6202CF98E00DB1D20 /* Main.storyboard in Resources */,
 				3F626595207338B8001B8AC5 /* states.kml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -540,20 +540,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		3F73C9F4202CF98E00DB1D20 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3F73C9F5202CF98E00DB1D20 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		3F73C9F9202CF98E00DB1D20 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				3F73C9FA202CF98E00DB1D20 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		3FA0541C208B8C0400C6877A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3FA0541D208B8C0400C6877A /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

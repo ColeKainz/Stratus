@@ -1,0 +1,19 @@
+PODS:
+  - CocoaAsyncSocket (7.6.3)
+  - GoogleMaps (2.6.0):
+    - GoogleMaps/Maps (= 2.6.0)
+  - GoogleMaps/Base (2.6.0)
+  - GoogleMaps/Maps (2.6.0):
+    - GoogleMaps/Base
+
+DEPENDENCIES:
+  - CocoaAsyncSocket
+  - GoogleMaps
+
+SPEC CHECKSUMS:
+  CocoaAsyncSocket: eafaa68a7e0ec99ead0a7b35015e0bf25d2c8987
+  GoogleMaps: 42f91c68b7fa2f84d5c86597b18ceb99f5414c7f
+
+PODFILE CHECKSUM: 9834b61afd966f1af1b21bee44217b192589078e
+
+COCOAPODS: 1.4.0
