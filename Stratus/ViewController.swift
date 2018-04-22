@@ -58,7 +58,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
         mapViewController.updateMarker( longitude: longitude, latitude: latitude, bearing: bearing )
         mapViewController.setAndUpdateFlightPath()
 
-        batteryLabel.text = "Battery: " + String( stratusData.battery)
+        batteryLabel.text = "Battery: " + String( stratusData.battery) + "%"
         transmitPowerLabel.text = "Signal: " + String( stratusData.transmitPower )
 
         gpsFixValidLabel.text = "GPS Fix/Valid: " + String( stratusData.GPSValid )
