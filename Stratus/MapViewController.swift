@@ -33,6 +33,9 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
 
         polylinePath = GMSPolyline( path: linePath )
         polylinePath.map = mapView
+        
+        marker.icon = UIImage( named: "plane" )
+        marker.groundAnchor = CGPoint(x: 0.5, y: 0.5)
     }
     
     override func didReceiveMemoryWarning() {
@@ -50,11 +53,8 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         markerBearing = bearing
         
         marker.position = markerPosition
-        marker.icon = UIImage( named: "plane" )
-        
-        marker.groundAnchor = CGPoint(x: 0.5, y: 0.5)
-
         marker.rotation = markerBearing
+        
         marker.title = "Lat: " + String( format: "%.5f", latitude ) + " " + "Long: " + String( format: "%.5f", longitude )
 
         marker.tracksViewChanges = true
@@ -77,8 +77,6 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
             zoom: zoom )
         mapView.animate( to: camera )
         
-        followMarker = true
-        
         //If we are not following the marker, do not update the flight view
         if flightView {
             mapView.animate( toBearing: markerBearing )
@@ -86,7 +84,8 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     }
     
     func mapView( _ mapView: GMSMapView, didChange position: GMSCameraPosition ) {
-        compassButton.imageView?.transform = CGAffineTransform( rotationAngle: CGFloat( position.bearing * Double.pi / 360 ) )
+        let angle = position.bearing * Double.pi / 360
+        compassButton.imageView?.transform = CGAffineTransform( rotationAngle: CGFloat( angle + 90 ) )
         
         if !( position.target.latitude == markerPosition.latitude &&
             position.target.longitude == markerPosition.longitude ) {

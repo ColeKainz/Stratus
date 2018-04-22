@@ -69,16 +69,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
         groundSpeedLabel.text = "Ground Speed: " + String( format: "%.5f",
             StratusModel.convertSpeed( rawSpeed: Int16( stratusData.groundSpeed ),
                 measure: pow( 10, 3 ), time: "H" )
-        ) + " KM/H"
+        )
 
         verticalSpeedLabel.text = "Vertical Speed: " + String( format: "%.5f",
             StratusModel.convertSpeed( rawSpeed: stratusData.verticalSpeed,
                 measure: pow( 10, 3 ), time: "H" )
-        ) + " KM/H"
+        )
 
         altitudeLabel.text = "Altitude: " + String( format: "%.5f",
             StratusModel.convertAltitude( rawAltitude: stratusData.altitude, measure: 1 )
-        ) + " m"
+        )
 
         groundTrackLabel.text = "Ori: " + String( bearing ) + "°"
     }
