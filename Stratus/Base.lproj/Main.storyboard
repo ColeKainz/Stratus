@@ -109,13 +109,6 @@
                                 <color key="textColor" red="1" green="0.095386675211146965" blue="0.15972374863129557" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5.5" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="J6P-97-RCe">
-                                <rect key="frame" x="668" y="576" width="94" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="zoomStepper:" destination="BYZ-38-t0r" eventType="valueChanged" id="UHy-bx-4br"/>
-                                </connections>
-                            </stepper>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IFY-KY-JKW">
                                 <rect key="frame" x="1" y="1" width="825" height="768"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
@@ -170,24 +163,6 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NwB-ou-paQ" customClass="GMSMapView">
                                 <rect key="frame" x="-5" y="0.0" width="830" height="768"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="prf-WV-UbK">
-                                        <rect key="frame" x="160" y="425" width="46" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
-                                        <connections>
-                                            <action selector="zoomIn:" destination="AWJ-vk-WpZ" eventType="touchUpInside" id="SBg-jw-Awv"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AhK-r7-vif">
-                                        <rect key="frame" x="270" y="425" width="46" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
-                                        <connections>
-                                            <action selector="zoomOut:" destination="AWJ-vk-WpZ" eventType="touchUpInside" id="6Im-bi-HEE"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
                                 <color key="backgroundColor" red="1" green="0.64016549127945144" blue="0.65345193155904147" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ahn-gh-vKC">
@@ -229,5 +204,7 @@
         <image name="Compass_BG" width="300" height="300"/>
         <image name="battery_full" width="512" height="292"/>
         <image name="signal_full" width="512" height="512"/>
+        <image name="zoom_in_button" width="250" height="250"/>
+        <image name="zoom_out_button" width="250" height="250"/>
     </resources>
 </document>
