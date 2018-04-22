@@ -24,6 +24,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
     @IBOutlet weak var groundTrackLabel: UILabel!
     @IBOutlet weak var batteryImage: UIImageView!
     @IBOutlet weak var signalImage: UIImageView!
+    @IBOutlet weak var signalTest: UILabel!
     
     let manager = CLLocationManager()
     var fetcher = StratusDataFetcher.instance
@@ -62,6 +63,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
         batteryLabel.text = String( stratusData.battery) + "%"
         updateBatteryImage(battery: stratusData.battery)
         updateTransmitPower(signal: stratusData.transmitPower)
+        signalTest.text = String( stratusData.transmitPower )
 
         gpsFixValidLabel.text = "GPS Fix/Valid: " + String( stratusData.GPSValid )
 
