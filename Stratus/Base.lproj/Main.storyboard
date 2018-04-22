@@ -207,7 +207,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Compass_Arrow" translatesAutoresizingMaskIntoConstraints="NO" id="l8E-mc-36q">
-                                <rect key="frame" x="30" y="30" width="60" height="60"/>
+                                <rect key="frame" x="30" y="26" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
