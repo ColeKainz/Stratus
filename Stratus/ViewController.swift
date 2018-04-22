@@ -15,7 +15,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
     
     @IBOutlet weak var mapViewContainer: UIView!
     @IBOutlet weak var batteryLabel: UILabel!
-    @IBOutlet weak var transmitPowerLabel: UILabel!
     @IBOutlet weak var gpsFixValidLabel: UILabel!
     @IBOutlet weak var longitudeLabel: UILabel!
     @IBOutlet weak var latitudeLabel: UILabel!
@@ -23,6 +22,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
     @IBOutlet weak var altitudeLabel: UILabel!
     @IBOutlet weak var verticalSpeedLabel: UILabel!
     @IBOutlet weak var groundTrackLabel: UILabel!
+    @IBOutlet weak var batteryImage: UIImageView!
+    @IBOutlet weak var signalImage: UIImageView!
     
     let manager = CLLocationManager()
     var fetcher = StratusDataFetcher.instance
@@ -58,25 +59,26 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
         mapViewController.updateMarker( longitude: longitude, latitude: latitude, bearing: bearing )
         mapViewController.setAndUpdateFlightPath()
 
-        batteryLabel.text = "Battery: " + String( stratusData.battery) + "%"
-        transmitPowerLabel.text = "Signal: " + String( stratusData.transmitPower )
+        batteryLabel.text = String( stratusData.battery) + "%"
+        updateBatteryImage(battery: stratusData.battery)
+        updateTransmitPower(signal: stratusData.transmitPower)
 
         gpsFixValidLabel.text = "GPS Fix/Valid: " + String( stratusData.GPSValid )
 
         longitudeLabel.text = "Long: " + String( format: "%.5f", longitude )
         latitudeLabel.text = "Lat: " + String( format: "%.5f", latitude )
 
-        groundSpeedLabel.text = "Ground Speed: " + String( format: "%.5f",
+        groundSpeedLabel.text = String( format: "%.0f",
             StratusModel.convertSpeed( rawSpeed: Int16( stratusData.groundSpeed ),
                 measure: pow( 10, 3 ), time: "H" )
         )
 
-        verticalSpeedLabel.text = "Vertical Speed: " + String( format: "%.5f",
+        verticalSpeedLabel.text = String( format: "%.0f",
             StratusModel.convertSpeed( rawSpeed: stratusData.verticalSpeed,
                 measure: pow( 10, 3 ), time: "H" )
         )
 
-        altitudeLabel.text = "Altitude: " + String( format: "%.5f",
+        altitudeLabel.text = String( format: "%.0f",
             StratusModel.convertAltitude( rawAltitude: stratusData.altitude, measure: 1 )
         )
 
@@ -108,6 +110,38 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
             } )
             
             self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func updateBatteryImage(battery: UInt16) {
+        if battery >= 60 {
+            batteryImage.image = UIImage( named: "battery_full" )
+        }
+        else if battery >= 30 {
+            batteryImage.image = UIImage( named: "battery_half" )
+        }
+        else if battery >= 15 {
+            batteryImage.image = UIImage ( named: "battery_low" )
+        }
+        else {
+            batteryImage.image = UIImage ( named: "battery_empty" )
+        }
+    }
+    
+    func updateTransmitPower (signal: UInt8){
+        switch signal {
+        case 0, 1, 2:
+            signalImage.image = UIImage ( named: "signal_full" )
+        case 3, 4:
+            signalImage.image = UIImage ( named: "signal_four" )
+        case 5:
+            signalImage.image = UIImage ( named: "signal_three" )
+        case 6:
+            signalImage.image = UIImage ( named: "signal_two" )
+        case 7:
+            signalImage.image = UIImage ( named: "signal_one" )
+        default:
+            signalImage.image = UIImage ( named: "signal_zero" )
         }
     }
 }

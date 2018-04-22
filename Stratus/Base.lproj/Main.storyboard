@@ -103,18 +103,11 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Battery" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g28-Gw-im4">
-                                <rect key="frame" x="719" y="184" width="42" height="15"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g28-Gw-im4">
+                                <rect key="frame" x="869" y="28" width="47" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Signal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nj8-lm-1hQ">
-                                <rect key="frame" x="720" y="213" width="36" height="14"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zyo-hK-WaB">
@@ -133,7 +126,7 @@
                             </stepper>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IFY-KY-JKW">
                                 <rect key="frame" x="1" y="1" width="825" height="768"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                                 <connections>
                                     <segue destination="AWJ-vk-WpZ" kind="embed" id="Las-RU-Hdz"/>
                                 </connections>
@@ -145,19 +138,28 @@
                                 <color key="textColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="signal_full" translatesAutoresizingMaskIntoConstraints="NO" id="HFO-Yk-dVB">
+                                <rect key="frame" x="974" y="20" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="battery_full" translatesAutoresizingMaskIntoConstraints="NO" id="Z5y-4Y-hId">
+                                <rect key="frame" x="924" y="28" width="42" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.058823529411764705" green="0.058823529411764705" blue="0.058823529411764705" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="altitudeLabel" destination="YXs-fq-9ym" id="ifH-9J-jfl"/>
+                        <outlet property="batteryImage" destination="Z5y-4Y-hId" id="YKV-3c-Vej"/>
                         <outlet property="batteryLabel" destination="g28-Gw-im4" id="XIi-Kt-KgQ"/>
                         <outlet property="gpsFixValidLabel" destination="dJs-9T-lPx" id="v6G-Yi-VMe"/>
                         <outlet property="groundSpeedLabel" destination="tFR-n3-9II" id="kef-2f-7S5"/>
                         <outlet property="groundTrackLabel" destination="zyo-hK-WaB" id="71Z-rF-AFC"/>
                         <outlet property="latitudeLabel" destination="SQh-jZ-2GW" id="qoc-Mv-QvH"/>
                         <outlet property="longitudeLabel" destination="E1t-PE-buf" id="2Gi-A8-cLu"/>
-                        <outlet property="transmitPowerLabel" destination="Nj8-lm-1hQ" id="EaK-Az-Tqa"/>
+                        <outlet property="signalImage" destination="HFO-Yk-dVB" id="Hpv-oT-J12"/>
                         <outlet property="verticalSpeedLabel" destination="srf-8T-Bdw" id="egk-Ng-ees"/>
                     </connections>
                 </viewController>
@@ -174,7 +176,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NwB-ou-paQ" customClass="GMSMapView">
-                                <rect key="frame" x="-5" y="0.0" width="883" height="814"/>
+                                <rect key="frame" x="-5" y="0.0" width="830" height="768"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.64016549127945144" blue="0.65345193155904147" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -205,10 +207,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1B1-b4-QS2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="441" y="-105"/>
+            <point key="canvasLocation" x="440.91796875" y="-105.46875"/>
         </scene>
     </scenes>
     <resources>
         <image name="Compass_Arrow" width="300" height="300"/>
+        <image name="battery_full" width="512" height="292"/>
+        <image name="signal_full" width="512" height="512"/>
     </resources>
 </document>
