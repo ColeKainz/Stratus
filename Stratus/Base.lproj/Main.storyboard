@@ -146,13 +146,6 @@
                                 <rect key="frame" x="924" y="28" width="42" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BwU-jA-zef">
-                                <rect key="frame" x="962" y="58" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.058823529411764705" green="0.058823529411764705" blue="0.058823529411764705" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -167,7 +160,6 @@
                         <outlet property="latitudeLabel" destination="SQh-jZ-2GW" id="qoc-Mv-QvH"/>
                         <outlet property="longitudeLabel" destination="E1t-PE-buf" id="2Gi-A8-cLu"/>
                         <outlet property="signalImage" destination="HFO-Yk-dVB" id="Hpv-oT-J12"/>
-                        <outlet property="signalTest" destination="BwU-jA-zef" id="WK5-tk-rzv"/>
                         <outlet property="verticalSpeedLabel" destination="srf-8T-Bdw" id="egk-Ng-ees"/>
                     </connections>
                 </viewController>
