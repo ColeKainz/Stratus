@@ -131,18 +131,22 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
     }
     
     func updateTransmitPower (signal: UInt8){
-        switch signal {
-        case 0, 1, 2:
+        if signal == 0 || signal == 1 || signal == 2 {
             signalImage.image = UIImage ( named: "signal_full" )
-        case 3, 4:
+        }
+        else if signal == 3 || signal == 4 {
             signalImage.image = UIImage ( named: "signal_four" )
-        case 5:
+        }
+        else if signal == 5 {
             signalImage.image = UIImage ( named: "signal_three" )
-        case 6:
+        }
+        else if signal == 6 {
             signalImage.image = UIImage ( named: "signal_two" )
-        case 7:
+        }
+        else if signal == 7 {
             signalImage.image = UIImage ( named: "signal_one" )
-        default:
+        }
+        else {
             signalImage.image = UIImage ( named: "signal_zero" )
         }
     }
