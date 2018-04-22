@@ -13,7 +13,7 @@ import CoreLocation
 class MapViewController: UIViewController, GMSMapViewDelegate {
     
     @IBOutlet weak var mapView: GMSMapView!
-    @IBOutlet weak var compassButton: UIButton!
+    @IBOutlet weak var compassImage: UIImageView!
     
     var zoom: Float = 0
     var zoomInc: Float = 1
@@ -85,8 +85,9 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     }
     
     func mapView( _ mapView: GMSMapView, didChange position: GMSCameraPosition ) {
-        let angle = position.bearing * Double.pi / 360
-        compassButton.imageView?.transform = CGAffineTransform( rotationAngle: CGFloat( angle + 90 ) )
+        let angle = position.bearing * Double.pi / 180
+        
+        compassImage.transform = CGAffineTransform( rotationAngle: CGFloat( angle ) )
         
         if !( position.target.latitude == markerPosition.latitude &&
             position.target.longitude == markerPosition.longitude ) {
