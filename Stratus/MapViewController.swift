@@ -16,6 +16,8 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     @IBOutlet weak var compassButton: UIButton!
     
     var zoom: Float = 0
+    var zoomInc: Float = 1
+    var zoomDec: Float = -1
     
     var flightView = false
     var followMarker = true
@@ -111,5 +113,23 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     
     @IBAction func centerCameraOnClick( _ sender: Any ) {
         centerCamera()
+    }
+    
+    func zoomIn() {
+        self.zoom += zoomInc
+        mapView.animate( toZoom: zoom)
+    }
+    
+    func zoomOut() {
+        self.zoom -= zoomDec
+        mapView.animate( toZoom: zoom)
+    }
+    
+    @IBAction func zoomIn(_ sender: Any) {
+        zoomIn()
+    }
+    
+    @IBAction func zoomOut(_ sender: Any) {
+        zoomOut()
     }
 }
