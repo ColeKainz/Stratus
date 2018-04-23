@@ -166,7 +166,7 @@
                                 <color key="backgroundColor" red="1" green="0.64016549127945144" blue="0.65345193155904147" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mYY-PV-bpv" userLabel="Draw Line">
-                                <rect key="frame" x="382" y="354" width="60" height="60"/>
+                                <rect key="frame" x="30" y="150" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="Tracking_BG"/>
                                 <connections>

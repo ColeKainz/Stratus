@@ -94,10 +94,14 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     @IBAction func toggleButton(_ sender: Any) {
         if let button = sender as? UIButton {
             if button.isSelected {
-                // set deselected
+                flightView = false
+                followMarker = false
                 button.isSelected = false
             } else {
-                // set selected
+                flightView = true
+                followMarker = true
+                centerCamera()
+                setAndUpdateFlightPath()
                 button.isSelected = true
             }
         }
