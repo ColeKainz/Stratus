@@ -99,6 +99,23 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         }
     }
     
+    //Polylines
+    /*
+    func drawline() {
+        flightView = true
+        followMarker = true
+        centerCamera()
+        setAndUpdateFlightPath()
+    }*/
+    
+    @IBAction func flightPath(_ sender: Any) {
+        flightView = true
+        followMarker = true
+        centerCamera()
+        setAndUpdateFlightPath()
+    }
+
+    
     @IBAction func compassOnClick( _ sender: Any ) {
         if mapView.camera.bearing != 0 {
             mapView.animate( toBearing: 0 )
