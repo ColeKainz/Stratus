@@ -165,13 +165,12 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.64016549127945144" blue="0.65345193155904147" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ivd-Tq-5a8" userLabel="Draw Line">
-                                <rect key="frame" x="30" y="250" width="60" height="60"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mYY-PV-bpv" userLabel="Draw Line">
+                                <rect key="frame" x="382" y="354" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Tracking_BG"/>
-                                <state key="selected" image="Tracking_BG_inverted"/>
+                                <state key="normal" title="Button" image="Tracking_BG"/>
                                 <connections>
-                                    <action selector="flightPath:" destination="AWJ-vk-WpZ" eventType="touchUpInside" id="GOL-wt-PBt"/>
+                                    <action selector="toggleButton:" destination="AWJ-vk-WpZ" eventType="touchUpInside" id="ZPx-VW-NNg"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XNk-en-o0e" userLabel="Zoom In">
@@ -208,6 +207,7 @@
                     </view>
                     <connections>
                         <outlet property="compassImage" destination="l8E-mc-36q" id="wOg-DP-ThW"/>
+                        <outlet property="drawLine" destination="mYY-PV-bpv" id="0Vq-W2-l7G"/>
                         <outlet property="mapView" destination="NwB-ou-paQ" id="4s6-IJ-7Se"/>
                     </connections>
                 </viewController>
@@ -220,7 +220,6 @@
         <image name="Compass_Arrow" width="300" height="300"/>
         <image name="Compass_BG" width="300" height="300"/>
         <image name="Tracking_BG" width="300" height="300"/>
-        <image name="Tracking_BG_inverted" width="300" height="300"/>
         <image name="battery_full" width="512" height="292"/>
         <image name="signal_full" width="512" height="512"/>
         <image name="zoom_in_button" width="250" height="250"/>
