@@ -74,39 +74,11 @@
                                 <color key="textColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GPS Fix/Valid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dJs-9T-lPx">
-                                <rect key="frame" x="724" y="97" width="32" height="15"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Longitude" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E1t-PE-buf">
-                                <rect key="frame" x="723" y="126" width="33" height="15"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Latitude" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SQh-jZ-2GW">
-                                <rect key="frame" x="724" y="155" width="32" height="15"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g28-Gw-im4">
                                 <rect key="frame" x="869" y="28" width="47" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zyo-hK-WaB">
-                                <rect key="frame" x="679" y="443" width="40" height="14"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.095386675211146965" blue="0.15972374863129557" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IFY-KY-JKW">
@@ -139,11 +111,7 @@
                         <outlet property="altitudeLabel" destination="YXs-fq-9ym" id="ifH-9J-jfl"/>
                         <outlet property="batteryImage" destination="Z5y-4Y-hId" id="YKV-3c-Vej"/>
                         <outlet property="batteryLabel" destination="g28-Gw-im4" id="XIi-Kt-KgQ"/>
-                        <outlet property="gpsFixValidLabel" destination="dJs-9T-lPx" id="v6G-Yi-VMe"/>
                         <outlet property="groundSpeedLabel" destination="tFR-n3-9II" id="kef-2f-7S5"/>
-                        <outlet property="groundTrackLabel" destination="zyo-hK-WaB" id="71Z-rF-AFC"/>
-                        <outlet property="latitudeLabel" destination="SQh-jZ-2GW" id="qoc-Mv-QvH"/>
-                        <outlet property="longitudeLabel" destination="E1t-PE-buf" id="2Gi-A8-cLu"/>
                         <outlet property="signalImage" destination="HFO-Yk-dVB" id="Hpv-oT-J12"/>
                         <outlet property="verticalSpeedLabel" destination="srf-8T-Bdw" id="egk-Ng-ees"/>
                     </connections>
@@ -166,11 +134,12 @@
                                 <color key="backgroundColor" red="1" green="0.64016549127945144" blue="0.65345193155904147" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mYY-PV-bpv" userLabel="Draw Line">
-                                <rect key="frame" x="30" y="150" width="60" height="60"/>
+                                <rect key="frame" x="30" y="110" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
                                 <state key="normal" title="Button" image="Tracking_BG"/>
                                 <connections>
-                                    <action selector="toggleButton:" destination="AWJ-vk-WpZ" eventType="touchUpInside" id="ZPx-VW-NNg"/>
+                                    <action selector="toggleDrawFlightPath:" destination="AWJ-vk-WpZ" eventType="touchUpInside" id="adu-cK-Axc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XNk-en-o0e" userLabel="Zoom In">
@@ -178,6 +147,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="zoom_in_button"/>
                                 <connections>
+                                    <action selector="zoomIn:" destination="AWJ-vk-WpZ" eventType="touchDownRepeat" id="75K-hl-2Z5"/>
                                     <action selector="zoomIn:" destination="AWJ-vk-WpZ" eventType="touchUpInside" id="Kmr-MZ-SJP"/>
                                 </connections>
                             </button>
@@ -186,15 +156,16 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="zoom_out_button"/>
                                 <connections>
+                                    <action selector="zoomOut:" destination="AWJ-vk-WpZ" eventType="touchDownRepeat" id="GWb-3M-vXW"/>
                                     <action selector="zoomOut:" destination="AWJ-vk-WpZ" eventType="touchUpInside" id="VXK-Mb-j0A"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nes-A2-8tt">
                                 <rect key="frame" x="30" y="30" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="Compass_BG"/>
+                                <state key="normal" title="Compass" image="Compass_BG"/>
                                 <connections>
-                                    <action selector="centerCameraOnClick:" destination="AWJ-vk-WpZ" eventType="touchUpInside" id="Ozj-PR-5sy"/>
+                                    <action selector="compassOnClick:" destination="AWJ-vk-WpZ" eventType="touchUpInside" id="0f2-XK-Vli"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Compass_Arrow" translatesAutoresizingMaskIntoConstraints="NO" id="l8E-mc-36q">

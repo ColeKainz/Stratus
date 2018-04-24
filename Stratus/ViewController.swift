@@ -15,13 +15,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
     
     @IBOutlet weak var mapViewContainer: UIView!
     @IBOutlet weak var batteryLabel: UILabel!
-    @IBOutlet weak var gpsFixValidLabel: UILabel!
-    @IBOutlet weak var longitudeLabel: UILabel!
-    @IBOutlet weak var latitudeLabel: UILabel!
     @IBOutlet weak var groundSpeedLabel: UILabel!
     @IBOutlet weak var altitudeLabel: UILabel!
     @IBOutlet weak var verticalSpeedLabel: UILabel!
-    @IBOutlet weak var groundTrackLabel: UILabel!
     @IBOutlet weak var batteryImage: UIImageView!
     @IBOutlet weak var signalImage: UIImageView!
     
@@ -45,28 +41,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
         // Dispose of any resources that can be recreated.
     }
     
-    //Zoom Buttons (+ and -)
-    //Setting zoom as global variable will allow methods in class to manipulate zoom value.
-    @IBAction func zoomStepper(_ sender: UIStepper) {
-        self.mapViewController.setZoom( zoom: Float(sender.value))
-    }
-    
     func onUpdate( stratusData: StratusDataFetcher.StratusDataStruct ) {
         let longitude = StratusModel.convertToCoords( coord: stratusData.longitude )
         let latitude = StratusModel.convertToCoords( coord: stratusData.latitude )
         let bearing = StratusModel.convertGroundTrack( rawBearing: stratusData.groundTrack )
 
         mapViewController.updateMarker( longitude: longitude, latitude: latitude, bearing: bearing )
-        mapViewController.setAndUpdateFlightPath()
 
         batteryLabel.text = String( stratusData.battery) + "%"
         updateBatteryImage(battery: stratusData.battery)
         updateTransmitPower(signal: stratusData.transmitPower)
-
-        gpsFixValidLabel.text = "GPS Fix/Valid: " + String( stratusData.GPSValid )
-
-        longitudeLabel.text = "Long: " + String( format: "%.5f", longitude )
-        latitudeLabel.text = "Lat: " + String( format: "%.5f", latitude )
 
         groundSpeedLabel.text = String( format: "%.0f",
             StratusModel.convertSpeed( rawSpeed: Int16( stratusData.groundSpeed ),
@@ -81,8 +65,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
         altitudeLabel.text = String( format: "%.0f",
             StratusModel.convertAltitude( rawAltitude: stratusData.altitude, measure: 1 )
         )
-
-        groundTrackLabel.text = "Ori: " + String( bearing ) + "°"
     }
     
     func onSocketError(error: Error) {
