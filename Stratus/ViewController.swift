@@ -46,7 +46,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
         let latitude = StratusModel.convertToCoords( coord: stratusData.latitude )
         let bearing = StratusModel.convertGroundTrack( rawBearing: stratusData.groundTrack )
 
-        mapViewController.updateMarker( longitude: longitude, latitude: latitude, bearing: bearing )
+        mapViewController.updateMarker( longitude: longitude, latitude: latitude, bearing: bearing, GPSValid: stratusData.GPSValid )
 
         batteryLabel.text = String( stratusData.battery) + "%"
         updateBatteryImage(battery: stratusData.battery)

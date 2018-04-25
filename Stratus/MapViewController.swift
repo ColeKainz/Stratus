@@ -12,25 +12,33 @@ import CoreLocation
 
 class MapViewController: UIViewController, GMSMapViewDelegate {
     
+    enum FlightViewState {
+        case mapView
+        case travelView
+        case userView
+    }
+    
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var compassImage: UIImageView!
     @IBOutlet weak var drawLine: UIButton!
     
-    var zoomInc: Float = 1
+    let zoomInc: Float = 1
     
-    var flightView = false
+    var flightViewState: FlightViewState = .mapView
+    
     var followMarker = true
     var drawFlightPath = false
     
     let marker = GMSMarker()
     let linePath = GMSMutablePath()
     var polylinePath: GMSPolyline!
-    
+
     override func viewDidLoad() {
         //mapView.mapType = GMSMapViewType.none
         mapView.delegate = self
 
         polylinePath = GMSPolyline( path: linePath )
+        polylinePath.strokeWidth = 6
         polylinePath.map = mapView
         
         marker.icon = UIImage( named: "plane" )
@@ -46,11 +54,13 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func updateMarker( longitude: Double, latitude: Double, bearing: Double ) {
+    func updateMarker( longitude: Double, latitude: Double, bearing: Double, GPSValid: Bool ) {
         marker.position = CLLocationCoordinate2DMake( latitude, longitude )
         marker.rotation = bearing
         
         marker.title = "Lat: " + String( format: "%.5f", latitude ) + " " + "Long: " + String( format: "%.5f", longitude )
+        marker.snippet = GPSValid ? "" : "Invalid"
+        
         marker.map = mapView
         
         //Center the camera every update, provided we are following the marker.
@@ -58,7 +68,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
             centerCamera()
             
             //If we are not following the marker, do not update the flight view
-            if flightView {
+            if flightViewState == .travelView {
                 orientToFlightView()
             }
         }
@@ -70,8 +80,22 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     
     //Adds Polyline that follows the user's position, updated with new position coordinates
     func setAndUpdateFlightPath() {
-        linePath.add( marker.position )
-        polylinePath.path = linePath
+        var last = 0
+        if let index = polylinePath.path?.count() {
+            last = Int(index) - 1
+        }
+        
+        if last >= 0 {
+            let lastCoord = polylinePath.path!.coordinate( at: UInt(last) )
+        
+            if !( marker.position.latitude == lastCoord.latitude && marker.position.longitude == lastCoord.longitude ) {
+                linePath.add( marker.position )
+                polylinePath.path = linePath
+            }
+        } else {
+            linePath.add( marker.position )
+            polylinePath.path = linePath
+        }
     }
  
     func resetFlightPath() {
@@ -80,11 +104,16 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     }
     
     func centerCamera() {
-        mapView.animate(toLocation: marker.position)
+        if !( mapView.camera.target.latitude == marker.position.latitude &&
+            mapView.camera.target.longitude == marker.position.longitude ) {
+            mapView.animate(toLocation: marker.position)
+        }
     }
     
     func orientToFlightView() {
-        mapView.animate( toBearing: marker.rotation )
+        if mapView.camera.bearing != marker.rotation {
+            mapView.animate( toBearing: marker.rotation )
+        }
     }
     
     //Right now this should get the buttons to change
@@ -94,7 +123,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
                 drawFlightPath = false
                 button.isSelected = false
             } else {
-                flightView = true
+                flightViewState = .travelView
                 followMarker = true
                 drawFlightPath = true
                 button.isSelected = true
@@ -105,30 +134,29 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         }
     }
     
-    func mapView( _ mapView: GMSMapView, didChange position: GMSCameraPosition ) {
+    func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
+
         let angle = position.bearing * Double.pi / 180
-        
         compassImage.transform = CGAffineTransform( rotationAngle: CGFloat( angle ) )
-        
-        if !( position.target.latitude == marker.position.latitude &&
-            position.target.longitude == marker.position.longitude ) {
+    }
+    
+    func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
+        if gesture {
             followMarker = false
-        }
-        
-        if position.bearing != marker.rotation{
-            flightView = false
+            flightViewState = .userView
         }
     }
     
     @IBAction func compassOnClick( _ sender: Any ) {
-        if mapView.camera.bearing != 0 {
+        if flightViewState != .mapView {
             mapView.animate( toBearing: 0 )
-            flightView = false
+            flightViewState = .mapView
         } else {
             orientToFlightView()
-            flightView = true
+            flightViewState = .travelView
         }
         
+        followMarker = true
         centerCamera()
     }
     
