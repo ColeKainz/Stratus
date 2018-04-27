@@ -36,7 +36,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     override func viewDidLoad() {
         //mapView.mapType = GMSMapViewType.none
         mapView.delegate = self
-
+        
         polylinePath = GMSPolyline( path: linePath )
         polylinePath.strokeWidth = 6
         polylinePath.map = mapView
@@ -47,6 +47,13 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         
         drawLine.setImage( ( UIImage( named: "Tracking_BG" ) ), for: .normal )
         drawLine.setImage( ( UIImage( named: "Tracking_BG_inverted" ) ), for: .selected )
+        
+        let drawLineLongPressGesture = UILongPressGestureRecognizer( target: self, action: #selector( drawLineLongPress( _: ) ) )
+        drawLine.addGestureRecognizer(drawLineLongPressGesture)
+
+        let drawLineTapGesture = UITapGestureRecognizer( target: self, action: #selector( drawLineTap( _: ) ) )
+        drawLineTapGesture.numberOfTapsRequired = 1
+        drawLine.addGestureRecognizer(drawLineTapGesture)
     }
     
     override func didReceiveMemoryWarning() {
@@ -74,19 +81,16 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         }
         
         if drawFlightPath {
-            setAndUpdateFlightPath()
+            updateFlightPath()
         }
     }
     
     //Adds Polyline that follows the user's position, updated with new position coordinates
-    func setAndUpdateFlightPath() {
-        var last = 0
-        if let index = polylinePath.path?.count() {
-            last = Int(index) - 1
-        }
-        
-        if last >= 0 {
-            let lastCoord = polylinePath.path!.coordinate( at: UInt(last) )
+    func updateFlightPath() {
+        let lastIndex = Int( linePath.count() ) - 1
+
+        if lastIndex > -1 {
+            let lastCoord = polylinePath.path!.coordinate( at: UInt(lastIndex) )
         
             if !( marker.position.latitude == lastCoord.latitude && marker.position.longitude == lastCoord.longitude ) {
                 linePath.add( marker.position )
@@ -97,10 +101,22 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
             polylinePath.path = linePath
         }
     }
+    
+    func setupNewPolyLine() {
+        linePath.removeAllCoordinates()
+        
+        polylinePath = GMSPolyline( path: linePath )
+        polylinePath.strokeWidth = 6
+        polylinePath.map = mapView
+        
+        linePath.add( marker.position )
+        polylinePath.path = linePath
+    }
  
     func resetFlightPath() {
+        mapView.clear()
+        polylinePath.map = nil
         linePath.removeAllCoordinates()
-        polylinePath.path = linePath
     }
     
     func centerCamera() {
@@ -116,21 +132,27 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         }
     }
     
-    //Right now this should get the buttons to change
-    @IBAction func toggleDrawFlightPath( _ sender: Any ) {
-        if let button = sender as? UIButton {
-            if button.isSelected {
-                drawFlightPath = false
-                button.isSelected = false
-            } else {
-                flightViewState = .travelView
-                followMarker = true
-                drawFlightPath = true
-                button.isSelected = true
-                
-                centerCamera()
-                orientToFlightView()
-            }
+    @objc func drawLineTap( _ sender: UIGestureRecognizer ) {
+        if drawLine.isSelected {
+            drawFlightPath = false
+            drawLine.isSelected = false
+        } else {
+            flightViewState = .travelView
+            followMarker = true
+            drawFlightPath = true
+            drawLine.isSelected = true
+            
+            setupNewPolyLine()
+            centerCamera()
+            orientToFlightView()
+        }
+    }
+    
+    @objc func drawLineLongPress( _ sender: UIGestureRecognizer ) {
+        if sender.state == .ended {
+            resetFlightPath()
+            drawFlightPath = false
+            drawLine.isSelected = false
         }
     }
     

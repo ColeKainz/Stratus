@@ -138,9 +138,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                                 <state key="normal" title="Button" image="Tracking_BG"/>
-                                <connections>
-                                    <action selector="toggleDrawFlightPath:" destination="AWJ-vk-WpZ" eventType="touchUpInside" id="adu-cK-Axc"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XNk-en-o0e" userLabel="Zoom In">
                                 <rect key="frame" x="745" y="608" width="60" height="60"/>
