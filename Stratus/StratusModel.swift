@@ -47,9 +47,9 @@ struct StratusModel {
         case "s":
             return Double( rawSpeed ) * pow( 10,-2 ) / measure
         case "m":
-            return Double( rawSpeed ) * pow( 10,-2 ) / ( measure * 60 )
+            return Double( rawSpeed ) * pow( 10,-2 ) * 60 / measure
         default:
-            return Double( rawSpeed ) * pow( 10,-2 ) / ( measure * 60 * 60 )
+            return Double( rawSpeed ) * pow( 10,-2 ) * 60 * 60 / measure
         }
     }
     

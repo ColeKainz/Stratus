@@ -61,7 +61,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
             StratusModel.convertSpeed( rawSpeed: stratusData.verticalSpeed,
                 measure: pow( 10, 3 ), time: "H" )
         )
-
+        
         altitudeLabel.text = String( format: "%.0f",
             StratusModel.convertAltitude( rawAltitude: stratusData.altitude, measure: 1 )
         )
@@ -102,7 +102,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, StratusObserv
         else if battery >= 30 {
             batteryImage.image = UIImage( named: "battery_half" )
         }
-        else if battery >= 15 {
+        else if battery >= 1 {
             batteryImage.image = UIImage ( named: "battery_low" )
         }
         else {
