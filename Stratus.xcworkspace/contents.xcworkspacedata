@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
+   <Group
+      location = "container:"
+      name = "Documents">
+      <FileRef
+         location = "group:Project Documents.zip">
+      </FileRef>
+   </Group>
    <FileRef
       location = "group:Stratus.xcodeproj">
    </FileRef>
